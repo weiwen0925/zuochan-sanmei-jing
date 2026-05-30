@@ -186,6 +186,34 @@ img{-webkit-user-drag:none;user-drag:none;pointer-events:none;}
 .bridge-outro .bridge-label{background:var(--accent);}
 .bridge p{margin:0;color:var(--text2);line-height:2;font-size:15.5px;}
 
+/* ── 下一步閱讀建議卡（頁尾總橋接）─────────────────────── */
+.bridge-card{max-width:880px;margin:60px auto 40px;padding:34px 36px 30px;
+  background:linear-gradient(160deg,#fffdf5 0%,#f8efd9 100%);
+  border:1px solid var(--border);border-radius:14px;
+  box-shadow:0 6px 28px rgba(91,58,41,.10),0 0 0 1px rgba(184,134,11,.18) inset;
+  position:relative;}
+.bridge-card::before{content:"";position:absolute;left:0;top:18px;bottom:18px;width:5px;
+  background:linear-gradient(180deg,var(--gold),var(--accentL));border-radius:0 4px 4px 0;}
+.bridge-eyebrow{font-family:"Noto Sans TC",sans-serif;font-size:12px;font-weight:700;
+  color:var(--gold);letter-spacing:5px;text-align:center;
+  margin:0 0 18px;padding-bottom:10px;
+  border-bottom:1px dashed rgba(184,134,11,.4);}
+.bridge-card h3{font-size:22px;color:var(--accent);font-weight:700;
+  text-align:center;line-height:1.6;letter-spacing:2px;margin:0 0 22px;}
+.bridge-card p{font-size:16px;line-height:2;color:var(--text2);margin:0 0 14px;text-indent:2em;}
+.bridge-card p strong{color:var(--accent-red);font-weight:700;}
+.bridge-card .bridge-meta{font-family:"Noto Sans TC",sans-serif;font-size:14px;
+  color:var(--text-muted);line-height:2.1;text-indent:0;
+  background:rgba(184,134,11,.06);border-left:3px solid var(--gold);
+  padding:14px 18px;margin:18px 0 22px;border-radius:0 6px 6px 0;}
+.bridge-link{display:block;width:fit-content;margin:24px auto 0;
+  padding:12px 28px;background:var(--gold);color:#fff;
+  font-family:"Noto Sans TC",sans-serif;font-size:15px;font-weight:600;
+  letter-spacing:3px;text-decoration:none;border-radius:30px;
+  transition:all .25s;box-shadow:0 4px 14px rgba(184,134,11,.35);}
+.bridge-link:hover{background:var(--accent);transform:translateY(-2px);
+  box-shadow:0 6px 18px rgba(139,94,60,.4);}
+
 /* ── iframe ─────────────────────────────────────────── */
 .ch-frame{display:block;width:100%;border:0;
   background:#fffdf7;border:1px solid var(--border);
@@ -274,6 +302,11 @@ body{font-size:20px!important;}
 .toc-num{font-size:17px!important;}
 .bridge p{font-size:18.5px!important;line-height:2.1!important;}
 .bridge-label{font-size:12.5px!important;letter-spacing:2.2px!important;}
+.bridge-card h3{font-size:26px!important;}
+.bridge-card p{font-size:19px!important;line-height:2.1!important;}
+.bridge-card .bridge-meta{font-size:16.5px!important;line-height:2.15!important;}
+.bridge-eyebrow{font-size:13px!important;letter-spacing:5px!important;}
+.bridge-link{font-size:16.5px!important;}
 .ch-num{font-size:18px!important;}
 .ch-name{font-size:34px!important;}
 .ch-sub,.ch-desc,.ch-subtitle{font-size:17px!important;}
@@ -392,7 +425,7 @@ body{font-size:20px!important;}
 <a href="https://www.youtube.com/@Chengweiwen/posts" rel="noopener" style="color:#d4a84b;text-decoration:none;border-bottom:1px dotted #b8860b;margin:0 4px;" target="_blank">https://www.youtube.com/@Chengweiwen/posts</a>。<br/>
 願以此功德，普及於一切；<br/>我等與眾生，皆共成佛道。
 </div>
-</div></main><button aria-label="回到頂部" id="backTop">↑</button>
+</div><section class="bridge-card" data-wy-bridge="dazhidulun"><p class="bridge-eyebrow" data-wytext="k8Gmns3vhcXEh7vCicDtgNKXgsTe"></p><h3 data-wytext="kMeons7vi8XOi43HhOvEjOqFjc/Eg5LYksaoktvvgfzhjLnzgu7ngPS9jc/Eg5X/keGKncP8gOjqgZH4gu7ngM2KjPDUgpfQn9K7mfXk"></h3><p data-wytext="lPmnn+j/hM7LipX6h/bKgt++ienlgbXZlPmhnOPWhdv0iLbLgu7gh+m5iOn6gbjvk8SNns/7hun9i5Lwicnthumsj/L1gIvckvyGn9v1gOjgi5LGhdP2gdGkjPHJgLfykvyak977h9fPiJ7mgu7vgdSrieniW14CBRZDHUuI4dKF1a2a29KE5fDLwsqL+r2Zy+bF+fmK3eSG9Kmb6cKF7szL89OI4oqQ79bJwfWG2dSO0rJPTh0ZFwZDDVeN56Cf9+DJwO6K9ueIz6GU++qKyP3Ly+GB26FKBA1fFRsIXY3x4snL4YrQ6ICew4//zsrI8p2W+pDzy43x4snL4Yj054+x9YbS78XTyJyo+VVbU11Bi5THjtLkWUZeHhsBCUpIke+Rk+DYhsboh63+iO/0gPW/jODuj4DZkOOpmfXlhszGiLTJhNTLjcK7ienlg5X2kOCTn/jYi8vAgZH/hvrcjNegjMHXj6Lfn++EktPFi+/LhoTdiOnmhumv"></p><p data-wytext="kuS9ndPFh9DoiLXUhtj+g/y0ieniW14CBRZDHUuJ4+aI1JGW/P5RShpZGAYAABOV9/TCxvmKx8+H95eW28iFzv/L8ueN56FKBA1fFRsIXY/j1MnO9Ivw9VUCGR0cCEMRSZqt95rT+I3kx8TwyYrX946v0IHPz8XV1paR9pPm7o75wcvPw4vv1o+6w4/y+MrQ3Z+e75L1543P4svm1YvowIC76oru5Q=="></p><p class="bridge-meta" data-wytext="ksKXktjfhuDmi6jWhOPag8WMhdX0W08EWEfI98JPUl+C7qWUx8SL1svK1OyG+7GV9/DP+uFPhM7Li4PphMjvgdS4jPHpj6LZkPuXkv3Di+PEUk8BTlCI6N4NWFuN56WT8tLF+fmJ7sCC7qyX2POLycjKxsWLybeV9/DP+uFPh9H8iIHShsLBgMe3j8figbjCn9K7ksrfXwoTQROW7NlNUVHO6uGL/LaTyMzF4+CM4+GD7rlThPX2gNaYgvD7goLQk8aDn87Mi8P3"></p><a class="bridge-link" data-wytext="kvCgn8vvgOjri4nUh/fXgNOLgsL4hK39k8GtnezRhuXWi6jbh/LBjP+cgsfuR8/w5Q==" href="https://weiwen0925.github.io/dazhidulun-0/" rel="noopener noreferrer" target="_blank"></a></section></main><button aria-label="回到頂部" id="backTop">↑</button>
 <script>
 // ── 底部進度膠囊 ───────────────────────────────────
 var rpFill = document.getElementById('rpFill');
