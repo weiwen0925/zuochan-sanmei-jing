@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!--
+    《坐禪三昧經 · 上下卷彙整》sitemap
+    部署位置：https://weiwen0925.github.io/zuochan-sanmei-jing/
+    說明：本頁採完整防護（L1~L8 silent 模式），Googlebot 抓到的是
+    純白 body + 完整 head meta（title / description / OG / JSON-LD）。
+    搜尋結果會顯示書名卡片與 meta description；正文片段不收錄。
+  -->
+
+  <url>
+    <loc>https://weiwen0925.github.io/zuochan-sanmei-jing/</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant"
+                href="https://weiwen0925.github.io/zuochan-sanmei-jing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default"
+                href="https://weiwen0925.github.io/zuochan-sanmei-jing/"/>
+  </url>
+
+</urlset>
