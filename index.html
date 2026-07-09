@@ -2063,5 +2063,310 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 var c=0,iv=setInterval(function(){build();if(++c>20)clearInterval(iv);},250);
 })();</script>
 <!--WY-ZCTOC:END-->
+<!--WY-SEARCH:BEGIN-->
+<style id="wy-search-css">
+#wysFab{position:fixed;left:24px;bottom:26px;z-index:8990;width:52px;height:52px;border-radius:50%;cursor:pointer;
+  background:radial-gradient(circle at 32% 28%,#4a3c2c,#2a2118 72%);border:1px solid rgba(217,184,124,.55);
+  box-shadow:0 6px 22px rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:0;
+  opacity:.92;transition:opacity .3s,transform .25s,box-shadow .25s;}
+#wysFab.show{display:flex;}
+#wysFab:hover{opacity:1;transform:translateY(-3px);box-shadow:0 10px 28px rgba(184,134,11,.45);}
+.wysf-ic{font-family:"Noto Serif TC",serif;font-size:20px;font-weight:700;color:#e8caa0;line-height:1;text-shadow:0 1px 0 rgba(0,0,0,.5),0 0 14px rgba(217,184,124,.28);}
+.wysf-ring{position:absolute;inset:4px;border-radius:50%;border:1px solid rgba(217,184,124,.22);pointer-events:none;}
+#wysModal{position:fixed;inset:0;z-index:9005;display:none;background:rgba(16,12,8,.78);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);
+  overflow-y:auto;padding:9vh 16px 6vh;}
+#wysModal.show{display:block;}
+.wysm-card{max-width:800px;margin:0 auto;background:linear-gradient(180deg,#302823,#272019 88%);
+  border:1px solid rgba(184,134,11,.6);border-radius:18px;padding:28px 32px 20px;
+  box-shadow:0 24px 80px rgba(0,0,0,.6);}
+.wysm-orn{text-align:center;color:#8a7a62;font-size:13px;letter-spacing:8px;opacity:.75;}
+.wysm-title{text-align:center;font-family:"Noto Serif TC",serif;color:#e3c085;font-size:20px;font-weight:700;letter-spacing:8px;margin:8px 0 2px;text-indent:8px;}
+.wysm-sub{text-align:center;color:#9a8a72;font-family:"Noto Serif TC",serif;font-size:11.5px;letter-spacing:3px;margin-bottom:18px;}
+.wysm-if{width:100%;height:52px;border:none;display:block;background:transparent;}
+#wysInput{width:100%;background:transparent;border:none;outline:none;color:#f0e2c4;
+  font-family:"Noto Serif TC",serif;font-size:18px;letter-spacing:2px;padding:10px 4px 12px;caret-color:#e3c085;
+  border-bottom:1px solid rgba(217,184,124,.4);}
+#wysInput::placeholder{color:#7a6a52;letter-spacing:2px;font-size:15px;}
+#wysInput:focus{border-bottom-color:#d9b87c;}
+#wysResults{max-height:52vh;overflow-y:auto;margin-top:12px;}
+.wys-head{padding:9px 14px 7px;color:#c9a96e;font-family:"Noto Serif TC",serif;font-size:12px;letter-spacing:1.5px;
+  border-bottom:1px solid rgba(217,184,124,.2);position:sticky;top:0;background:#2c241d;z-index:1;}
+.wys-hint{float:right;color:#8a7a62;font-size:10.5px;font-weight:400;}
+a.wys-row{display:flex;align-items:center;gap:10px;padding:9px 12px;text-decoration:none;
+  border-bottom:1px solid rgba(217,184,124,.1);}
+a.wys-row:hover{background:rgba(217,184,124,.1);}
+.wys-tag{flex-shrink:0;font-family:"Noto Serif TC",serif;font-size:11px;color:#2c241c;background:linear-gradient(135deg,#ffe9b8,#d9b87c);
+  padding:2px 9px;border-radius:10px;letter-spacing:1px;font-weight:700;white-space:nowrap;}
+.wys-tag2{background:linear-gradient(135deg,#cfe3d3,#8fb89a);}
+.wys-tag3{background:linear-gradient(135deg,#e8d5ec,#b99cc2);}
+.wys-tag4{background:linear-gradient(135deg,#f3d9c4,#d9a878);}
+.wys-t{flex:1;color:#d8c8ab;font-family:"Noto Serif TC",serif;font-size:13px;line-height:1.7;letter-spacing:.5px;}
+.wys-t b{color:#ffe7b3;font-weight:700;}
+.wys-tt{color:#c9a96e;font-size:11px;letter-spacing:1px;}
+.wys-more{padding:8px 14px;color:#8a7a62;font-size:11.5px;font-family:"Noto Serif TC",serif;}
+.wys-xmore{cursor:pointer;color:#c9a96e;border:1px solid rgba(217,184,124,.28);border-radius:12px;
+  margin:6px 12px 10px;padding:7px 14px;text-align:center;transition:background .2s,color .2s;}
+.wys-xmore:hover{background:rgba(217,184,124,.12);color:#ffe7b3;}
+.wysm-foot{text-align:center;color:#7a6a52;font-family:"Noto Serif TC",serif;font-size:11px;letter-spacing:2px;
+  padding-top:12px;margin-top:8px;border-top:1px dashed rgba(217,184,124,.18);}
+@media (max-width:700px){#wysFab{left:14px;bottom:18px;width:46px;height:46px;}.wysf-ic{font-size:16px;}.wysm-card{padding:20px 14px 14px;}}
+</style>
+<script id="wy-search-js">
+(function(){
+if(document.getElementById('wysFab'))return;
+var IDX=null,LOADING=false,ZI=null,ZLOAD=false;
+var fab=document.createElement('button');fab.id='wysFab';fab.type='button';fab.setAttribute('aria-label','尋 · 全站搜尋');fab.title='尋 · 全站搜尋';
+fab.innerHTML='<span class="wysf-ic">尋</span><span class="wysf-ring"></span>';
+document.body.appendChild(fab);
+var sm=document.createElement('div');sm.id='wysModal';
+sm.innerHTML='<div class="wysm-card" role="dialog" aria-modal="true" aria-label="全站搜尋">'
+ +'<div class="wysm-orn">❀</div><div class="wysm-title">全站搜尋</div>'
+ +'<div class="wysm-sub">品名 · 原典節點 · 全景總表 · 系列導讀</div>'
+ +'<iframe class="wysm-if" title="搜尋輸入" scrolling="no"></iframe>'
+ +'<div id="wysResults"></div>'
+ +'<div class="wysm-foot">Esc 關閉 · 結果皆於新分頁開啟</div></div>';
+document.body.appendChild(sm);
+var sres=sm.querySelector('#wysResults');
+/* 輸入框放同源 iframe:獨立 document,頁面防護層(全域鍵盤/選取攔截)完全不影響打字 */
+var ifr=sm.querySelector('.wysm-if'),idoc=ifr.contentDocument;
+idoc.open();
+idoc.write('<!DOCTYPE html><html><head><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet"><style>html,body{margin:0;padding:0;background:transparent;overflow:hidden;}input{width:100%;box-sizing:border-box;background:transparent;border:none;outline:none;color:#f0e2c4;font-family:"Noto Serif TC",serif;font-size:18px;letter-spacing:2px;padding:10px 4px 12px;caret-color:#e3c085;border-bottom:1px solid rgba(217,184,124,.4);}input:focus{border-bottom-color:#d9b87c;}input::placeholder{color:#7a6a52;letter-spacing:2px;font-size:15px;}input::-webkit-search-cancel-button{-webkit-appearance:none;}</style></head><body><input id="q" type="search" autocomplete="off" placeholder="輸入關鍵詞，多詞可用空格分隔…"/></body></html>');
+idoc.close();
+var sin=idoc.getElementById('q');
+
+function esc(t){var d=document.createElement('div');d.textContent=t;return d.innerHTML;}
+var WREPO={zl:'nagarjuna-mulamadhyamakakarika',tg:'twelve-gates',bl:'bailun',vv:'vigrahavyavartani',bz:'pratyutpanna-samadhi-sutra',zc:'zuochan-sanmei-jing'}; /* ★新論擴充點★ 新論 base 在此補 */
+function baseOf(k){
+  if(WREPO[k])return 'https://weiwen0925.github.io/'+WREPO[k]+'/';
+  return 'https://weiwen0925.github.io/dazhidulun-'+k+'/';
+}
+var WLNAME={zl:'中論',tg:'十二門論',bl:'百論',vv:'迴諍論',bz:'般舟三昧經',zc:'坐禪三昧經'}; /* ★新論擴充點★ 新論顯示名在此補 */
+function label(k){return WLNAME[k]||('卷 '+k);}
+function terms(q){return q.split(/[\s,，、・]+/).filter(function(x){return x.length>=1;}).slice(0,5);}
+function matchAll(txt,ts){var lo=txt.toLowerCase();
+  for(var i=0;i<ts.length;i++){if(lo.indexOf(ts[i].toLowerCase())<0)return false;}return true;}
+function hlAll(t,ts){
+  var out=esc(t);
+  for(var i=0;i<ts.length;i++){
+    var e2=esc(ts[i]).replace(/[.*+?^${}()|[\\]\\\\]/g,'\\\\$&');
+    out=out.replace(new RegExp('('+e2+')','gi'),'\x01$1\x02');
+  }
+  return out.replace(/\x01/g,'<b>').replace(/\x02/g,'</b>');
+}
+function snippet(txt,ts){
+  var lo=txt.toLowerCase(),i=-1;
+  for(var x=0;x<ts.length;x++){var j=lo.indexOf(ts[x].toLowerCase());if(j>-1&&(i<0||j<i))i=j;}
+  if(i<0)i=0;
+  var st=Math.max(0,i-22),en=Math.min(txt.length,i+64);
+  return (st>0?'…':'')+txt.slice(st,en)+(en<txt.length?'…':'');
+}
+function loadIdx(){
+  if(IDX||LOADING)return;LOADING=true;
+  fetch('https://weiwen0925.github.io/dazhidulun-0/search-index.json')
+    .then(function(r){if(!r.ok)throw 0;return r.json();})
+    .then(function(j){IDX=j||{};})
+    .catch(function(){IDX={};})
+    .then(function(){LOADING=false;render();});
+}
+function loadZb(){
+  if(ZI||ZLOAD||!IDX||!IDX.zbv||!IDX.zbv.length){if(!ZI&&IDX&&(!IDX.zbv||!IDX.zbv.length))ZI=[];return;}
+  ZLOAD=true;
+  var items=[],left=IDX.zbv.length;
+  IDX.zbv.forEach(function(k){
+    fetch(baseOf(k)+'zongbiao.json').then(function(r){if(!r.ok)throw 0;return r.json();})
+    .then(function(j){
+      var pins=(j&&j.pins)||{};
+      Object.keys(pins).forEach(function(pp){
+        var d=pins[pp],parts=[];
+        if(d.subtitle)parts.push(d.subtitle);
+        (d.tables||[]).forEach(function(t){
+          if(t.caption)parts.push(t.caption);
+          (t.rows||[]).forEach(function(rr){parts.push(rr.join('：'));});
+        });
+        if(d.note)parts.push(d.note);
+        items.push({k:k,p:parseInt(pp,10),title:(d.title||'').replace(/<\/?b>/g,''),
+                    txt:parts.join(' ¶ ').replace(/<\/?b>/g,'')});
+      });
+    }).catch(function(){}).then(function(){if(--left<=0){ZI=items;ZLOAD=false;render();}});
+  });
+}
+function row(cls,tag,href,inner){
+  return '<a class="wys-row" href="'+href+'" target="_blank" rel="noopener"><span class="wys-tag '+cls+'">'+tag+'</span>'
+    +'<span class="wys-t">'+inner+'</span></a>';
+}
+var EXP={q:'',p:0,n:0,e:0,z:0};   /* 各層「顯示全部」展開狀態，換詞即重設 */
+var XCAP=500;                       /* 展開後單層顯示上限，防爆量 */
+function xmore(layer,total,shown){
+  if(total<=shown)return '';
+  return '<div class="wys-more wys-xmore" data-xmore="'+layer+'">▾ 顯示全部 '+total+' 筆</div>';
+}
+function xnote(total,shown){
+  return (total>shown)?'<div class="wys-more">已列前 '+shown+' 筆 · 加詞可縮小範圍</div>':'';
+}
+function render(){
+  var q=(sin.value||'').trim();
+  if(!q){sres.innerHTML='';return;}
+  if(EXP.q!==q){EXP.q=q;EXP.p=0;EXP.n=0;EXP.e=0;EXP.z=0;}
+  var ts=terms(q),h='';
+  var pure=/^[\d\s]+$/.test(q);
+  if(!IDX){sres.innerHTML='<div class="wys-head">索引載入中…</div>';loadIdx();return;}
+  var vols=IDX.vols||{};
+  var vm=q.match(/^卷?\s*(\d{1,3})$/);
+  var hits=[];
+  if(vm&&vols[String(parseInt(vm[1],10))]){
+    var k0=String(parseInt(vm[1],10));
+    vols[k0].pins.forEach(function(pin){hits.push([k0,pin]);});
+  }else if(ts.length&&!pure){
+    Object.keys(vols).forEach(function(k){
+      vols[k].pins.forEach(function(pin){if(matchAll(pin.t,ts))hits.push([k,pin]);});
+    });
+  }
+  if(hits.length){
+    var M1=EXP.p?XCAP:10,S1=Math.min(hits.length,M1);
+    h+='<div class="wys-head">品名 · '+hits.length+' 筆 <span class="wys-hint">直達該品</span></div>';
+    for(var r=0;r<S1;r++){var k=hits[r][0],pin=hits[r][1];
+      h+=row('','' +esc(label(k))+'・品'+pin.p,baseOf(k)+'#'+vols[k].a+'-'+pin.p,hlAll(pin.t,vm?[]:ts));}
+    h+=EXP.p?xnote(hits.length,S1):xmore('p',hits.length,S1);
+  }
+  if(!vm&&!pure&&ts.length){
+    var nds=IDX.nodes||{},perk={},ntot=0;
+    var nkeys=Object.keys(nds);
+    nkeys.sort(function(a,b){var na=/^\d+$/.test(a)?parseInt(a,10):-1,nb=/^\d+$/.test(b)?parseInt(b,10):-1;return na-nb;});
+    nkeys.forEach(function(k){
+      for(var bi=0;bi<nds[k].length;bi++){var nd=nds[k][bi];
+        if(matchAll(nd.t,ts)){(perk[k]=perk[k]||[]).push(nd);ntot++;}}
+    });
+    var nh=[],ord=Object.keys(perk),rd=0,added=true,DN=EXP.n?XCAP:60;
+    while(nh.length<DN&&added){added=false;
+      for(var oi=0;oi<ord.length;oi++){var pa=perk[ord[oi]];
+        if(pa.length>rd&&nh.length<DN){nh.push([ord[oi],pa[rd]]);added=true;}}
+      rd++;}
+    if(nh.length){
+      var M2=EXP.n?XCAP:10,S2=Math.min(nh.length,M2);
+      h+='<div class="wys-head">原典節點 · '+ntot+' 筆 <span class="wys-hint">直達該節</span></div>';
+      for(var r2=0;r2<S2;r2++){var kk=nh[r2][0],nd=nh[r2][1];
+        h+=row('wys-tag3',esc(label(kk)),baseOf(kk)+'#'+esc(nd.a),hlAll(nd.t,ts));}
+      h+=EXP.n?xnote(ntot,S2):xmore('n',ntot,S2);
+    }
+    var es2=IDX.essays||[],eh=[];
+    for(var c2=0;c2<es2.length;c2++){var it3=es2[c2];
+      if(matchAll(it3.t+' '+it3.x,ts))eh.push(it3);}
+    if(eh.length){
+      var M4=EXP.e?XCAP:8,S4=Math.min(eh.length,M4);
+      h+='<div class="wys-head">系列導讀 · '+eh.length+' 篇 <span class="wys-hint">開啟文章</span></div>';
+      for(var r4=0;r4<S4;r4++){var it4=eh[r4];
+        h+=row('wys-tag4','導讀 '+it4.n,'https://weiwen0925.github.io/medium-import-'+it4.n+'.html',
+          '<span class="wys-tt">'+esc(it4.t.slice(0,30))+'</span><br>'+hlAll(snippet(it4.x,ts),ts));}
+      h+=EXP.e?xnote(eh.length,S4):xmore('e',eh.length,S4);
+    }
+    if(!ZI){h+='<div class="wys-head">總表內容 · 索引載入中…</div>';loadZb();}
+    else{
+      var zperk={},ztot=0;
+      for(var z=0;z<ZI.length;z++){var it=ZI[z];
+        if(matchAll(it.title+' '+it.txt,ts)){
+          var zk=String(it.k);
+          (zperk[zk]=zperk[zk]||[]).push(it);ztot++;}}
+      var zh=[],zord=Object.keys(zperk),zrd=0,zadd=true,DZ=EXP.z?XCAP:80;
+      zord.sort(function(a,b){var na=/^\d+$/.test(a)?parseInt(a,10):-1,nb=/^\d+$/.test(b)?parseInt(b,10):-1;return na-nb;});
+      while(zh.length<DZ&&zadd){zadd=false;
+        for(var zo=0;zo<zord.length;zo++){var zpa=zperk[zord[zo]];
+          if(zpa.length>zrd&&zh.length<DZ){zh.push(zpa[zrd]);zadd=true;}}
+        zrd++;}
+      if(zh.length){
+        var M3=EXP.z?XCAP:12,S3=Math.min(zh.length,M3);
+        h+='<div class="wys-head">總表內容 · '+ztot+' 筆 <span class="wys-hint">達該品(右下有總表鈕)</span></div>';
+        for(var r3=0;r3<S3;r3++){var it2=zh[r3];
+          var vk=vols[it2.k];
+          h+=row('wys-tag2',esc(label(it2.k))+'・品'+it2.p,baseOf(it2.k)+'#'+((vk&&vk.a)||'chapter')+'-'+it2.p,
+            '<span class="wys-tt">'+esc(it2.title.slice(0,26))+'</span><br>'+hlAll(snippet(it2.txt,ts),ts));}
+        h+=EXP.z?xnote(ztot,S3):xmore('z',ztot,S3);
+      }
+    }
+  }
+  if(!h){
+    if(!IDX.vols)h='<div class="wys-head">索引載入失敗 · 請檢查網路後重新整理頁面</div>';
+    else h='<div class="wys-head">查無結果 · 換個關鍵詞試試</div>'
+         +'<div class="wys-more">多詞以空格分隔時，須「同一品／同一項」同時含有全部詞；可改試單詞或同義詞</div>';
+  }
+  sres.innerHTML=h;
+}
+var timer=null;
+sin.addEventListener('input',function(){clearTimeout(timer);timer=setTimeout(render,220);});
+sin.addEventListener('search',render);
+sres.addEventListener('click',function(e){
+  var xm=e.target.closest&&e.target.closest('[data-xmore]');
+  if(xm){EXP[xm.getAttribute('data-xmore')]=1;render();}
+});
+function smClose(){sm.classList.remove('show');document.documentElement.style.overflow='';}
+idoc.addEventListener('keydown',function(e){if(e.key==='Escape')smClose();});
+fab.addEventListener('click',function(){sm.classList.add('show');document.documentElement.style.overflow='hidden';
+  loadIdx();setTimeout(function(){try{sin.focus();}catch(e){}},60);});
+sm.addEventListener('click',function(e){if(e.target===sm)smClose();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&sm.classList.contains('show'))smClose();});
+function fabPlace(){ /* 避讓左側固定導覽欄(sb-nav 等):排到欄右側 12px */
+  var right=0,cands=document.querySelectorAll('[class*="sb"],[class*="side"],[class*="rail"],nav,aside');
+  for(var i=0;i<cands.length;i++){var el=cands[i];
+    if(el===fab||sm.contains(el))continue;
+    var st;try{st=getComputedStyle(el);}catch(_){continue;}
+    if(st.position!=='fixed'&&st.position!=='sticky')continue;
+    var r=el.getBoundingClientRect();
+    if(r.left<48&&r.width>0&&r.width<150&&r.height>200&&r.right>right)right=r.right;
+  }
+  fab.style.left=(right>0?Math.round(right)+12:24)+'px';
+}
+function fabShow(){fab.classList.toggle('show',window.scrollY>250);fabPlace();}
+setInterval(fabPlace,1500);
+window.addEventListener('scroll',fabShow,{passive:true});
+setTimeout(fabShow,600);setTimeout(fabShow,2000);
+})();
+</script>
+<!--WY-SEARCH:END-->
+<!--WY-GOTO:BEGIN-->
+<script id="wy-goto-js">
+/* 跨 iframe 錨點導航：#chapter-品[-章[-節]] / #ch-N / #pin-N 深連結必達。
+   節點錨多在 L1 解碼後的 srcdoc iframe 內，原生跳轉找不到；本模組輪詢主文件＋
+   全部同源 iframe（250ms×120=30s），找到即捲動，佈局展開後再自動校正兩次。 */
+(function(){
+if(window.__wyGoto)return;window.__wyGoto=1;
+var userMoved=false;
+['wheel','touchstart','keydown'].forEach(function(ev){
+  window.addEventListener(ev,function(){userMoved=true;},{passive:true,once:true});});
+function findEl(id){
+  var el=document.getElementById(id);
+  if(el)return{el:el,f:null};
+  var ifr=document.querySelectorAll('iframe');
+  for(var i=0;i<ifr.length;i++){
+    try{var d=ifr[i].contentDocument;if(!d)continue;
+      var e2=d.getElementById(id);if(e2)return{el:e2,f:ifr[i]};}catch(e){}
+  }
+  return null;
+}
+function yOf(hit){
+  if(!hit.f)return window.scrollY+hit.el.getBoundingClientRect().top-64;
+  var fr=hit.f.getBoundingClientRect(),er=hit.el.getBoundingClientRect(),sy=0;
+  try{sy=hit.f.contentWindow.pageYOffset||0;}catch(e){}
+  return window.scrollY+fr.top+er.top+sy-64;
+}
+var tries=0,tm=null,target='';
+function attempt(){
+  var hit=findEl(target);
+  if(!hit){if(++tries<120){tm=setTimeout(attempt,250);}return;}
+  window.scrollTo({top:Math.max(0,yOf(hit)),behavior:tries<2?'smooth':'auto'});
+  [900,2200].forEach(function(d){setTimeout(function(){
+    if(userMoved)return;var h2=findEl(target);
+    if(h2)window.scrollTo({top:Math.max(0,yOf(h2)),behavior:'auto'});},d);});
+}
+function go(){
+  var m=/^#((?:chapter|ch|pin)-\d+(?:-\d+){0,2})$/.exec(location.hash||'');
+  if(!m)return;
+  target=m[1];tries=0;userMoved=false;clearTimeout(tm);
+  attempt();
+}
+window.addEventListener('hashchange',go);
+if(document.readyState==='complete')setTimeout(go,300);
+else window.addEventListener('load',function(){setTimeout(go,300);});
+})();
+</script>
+<!--WY-GOTO:END-->
 </body>
 </html>
