@@ -1013,5 +1013,58 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classL
 upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
 })();</script>
 <!--WY-ZCP11:END-->
+<!--WY-ZCP12:BEGIN-->
+<style id="wy-zcp12-css">
+.zcp12-fabbox{position:fixed;right:22px;bottom:78px;z-index:121;display:none;}
+.zcp12-fabbox.show{display:block;}
+.zcp12-btn{display:inline-flex;align-items:center;gap:9px;font-family:"Noto Sans TC",sans-serif;letter-spacing:.5px;color:#f7ecd2;background:linear-gradient(135deg,#573f38,#2e2420);padding:8px 15px;border-radius:22px;border:1px solid rgba(184,134,11,.6);box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:pointer;opacity:.96;transition:opacity .3s,transform .2s,box-shadow .2s;}
+.zcp12-btn:hover{opacity:1;transform:translateY(-2px);box-shadow:0 6px 22px rgba(184,134,11,.5);}
+.zcp12-ic{font-size:15px;line-height:1;color:#ecc978;}
+.zcp12-ls{display:flex;flex-direction:column;align-items:flex-start;line-height:1.22;}
+.zcp12-l1{font-size:10.5px;font-weight:500;opacity:.82;white-space:nowrap;}
+.zcp12-l2{font-size:13px;font-weight:700;color:#faf1d8;white-space:nowrap;}
+.zcp12-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(28,20,12,.58);padding:16px;}
+.zcp12-modal.open{display:flex;}
+.zcp12-card{position:relative;background:#fbf7ee;max-width:900px;width:100%;max-height:88vh;overflow:auto;border:1px solid #d8c8ac;border-radius:14px;padding:30px 24px 22px;box-shadow:0 18px 50px rgba(0,0,0,.4);}
+.zcp12-card h3{margin:0 0 2px;font-family:"Noto Serif TC",serif;font-size:20px;color:#8b5e3c;}
+.zcp12-card .sub{margin:0 0 14px;font-family:"Noto Sans TC",sans-serif;font-size:13px;color:#6b5b4b;}
+.zcp12-close{position:absolute;top:12px;right:16px;width:34px;height:34px;border:none;border-radius:50%;background:#efe6d4;color:#8b5e3c;font-size:22px;line-height:1;cursor:pointer;z-index:2;}
+.zcp12-close:hover{background:#e3d5b8;}
+.zcp12-tbl{width:100%;border-collapse:collapse;font-family:"Noto Sans TC",sans-serif;font-size:13px;margin:.3em 0 1.2em;}
+.zcp12-tbl caption{font-family:"Noto Serif TC",serif;font-weight:700;color:#8b5e3c;font-size:14.5px;text-align:left;margin:.6em 0 .35em;line-height:1.5;}
+.zcp12-tbl th,.zcp12-tbl td{border:1px solid #d8c8ac;padding:.45em .6em;text-align:left;vertical-align:top;line-height:1.6;}
+.zcp12-tbl thead th{background:#8b5e3c;color:#f7ecd2;font-weight:700;}
+.zcp12-tbl td:first-child{white-space:nowrap;color:#8b5e3c;font-weight:700;background:#f0e8d8;}
+.zcp12-tbl tbody tr:nth-child(even) td{background:#f6efe0;}
+.zcp12-tbl b{color:#8b2500;}
+.zcp12-note{font-size:12px;color:#5a4e3a;line-height:1.9;background:#f6efe0;border-left:3px solid #c4956a;border-radius:0 6px 6px 0;padding:10px 13px;margin:4px 0 0;}
+.zcp12-note b{color:#8b2500;}
+@media(max-width:900px){.zcp12-fabbox{right:14px;}.zcp12-tbl{font-size:11.5px;}.zcp12-card{padding:26px 14px 16px;}}
+</style>
+<div class="zcp12-fabbox" id="zcp12Box"><button class="zcp12-btn" id="zcp12Btn" type="button" aria-label="開啟全景總表"><span class="zcp12-ic">▦</span><span class="zcp12-ls"><span class="zcp12-l1">本品 · 離欲入禪・四禪階梯</span><span class="zcp12-l2">呵棄愛欲進學初禪 · 覺觀如波的破立辯證</span></span></button></div><div class="zcp12-modal" id="zcp12Modal" role="dialog" aria-modal="true" aria-label="全景總表"><div class="zcp12-card"><button class="zcp12-close" id="zcp12Close" type="button" aria-label="關閉">×</button><h3>卷下·第一品 離欲入禪 · 全景總表</h3><p class="sub">卷下·第一品｜觀患呵棄滅斷三段論・欲界過患病理隱喻輪盤・一心相四維診斷矩陣・四禪辯證矩陣</p><table class="zcp12-tbl"><caption>一、破立之始：從呵棄愛欲到四禪階梯（本品主骨架）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>經文基調</td><td>觀患→呵棄→滅斷——三段式邏輯貫穿全品，先觀欲界過患，再呵棄愛欲，終滅斷欲火而入禪</td></tr><tr><td>欲界過患本質</td><td>無常與無厭足——欲樂本性虛幻，無實質可得卻仍緊抓不放，徒勞無功的執著</td></tr><tr><td>欲之病理隱喻輪盤</td><td>經文以鋪陳長句刻畫欲的病理，涵蓋徒勞無功、本性虛幻等多重面向的隱喻矩陣</td></tr><tr><td>滅火之蔭</td><td>欲界如烈火，初禪如蔭涼——欲界與初禪的強烈對比，凸顯離欲入禪的解脫感</td></tr><tr><td>一心相</td><td>禪定基石非壓抑而得——一心相是欲火止息後自然呈現的專注狀態，非強制壓制的結果</td></tr></tbody></table><table class="zcp12-tbl"><caption>二、四禪階梯的辯證攀升（初禪→二禪→三禪→四禪）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>初禪成就與隱患</td><td>呵棄愛欲、滅斷欲火得入初禪——然初禪仍有覺觀如波的微細擾動，尚非究竟</td></tr><tr><td>覺觀如波</td><td>初禪雖離欲界粗重煩惱，但覺（粗）觀（細）二種心理活動仍如波浪般起伏未平</td></tr><tr><td>破除覺觀三步流程</td><td>經由三步操作，逐漸平息覺觀波動，由初禪過渡至二禪的內在寂靜</td></tr><tr><td>二禪隱論悖論</td><td>以喜為患——二禪雖離覺觀之擾，卻又生起喜受之樂，喜受本身反成二禪進階三禪之障礙</td></tr><tr><td>三禪第一樂</td><td>世間與淨地中的第一樂——三禪之樂被稱為世間最勝之樂，然「樂則是患」，三段式邏輯層層拆解其過患</td></tr><tr><td>四禪捨苦樂</td><td>捨苦樂、護念清淨——四禪超越苦樂二邊，達至捨念清淨之究竟禪定境地</td></tr></tbody></table><table class="zcp12-tbl"><caption>三、一心相四維矩陣與演算法主軸（診斷·中觀收攝）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>一心相四維診斷</td><td>外顯、內運、社交、戒定四維度構成自我檢核矩陣——判斷是否真已入禪定一心之境</td></tr><tr><td>四禪辯證矩陣</td><td>初禪離生喜樂、二禪定生喜樂、三禪離喜妙樂、四禪捨念清淨——四階皆依「以患為觀」的辯證邏輯層層超越</td></tr><tr><td>演算法主軸</td><td>以患為觀、知足捨去——每一禪定階段的殊勝樂受，終將被下一階段視為過患而超越，形成階梯式解脫</td></tr><tr><td>心法一·基底安住</td><td>每一階禪定的成就皆需先安住基底，方能觀察出其細微過患，進而捨離昇進</td></tr><tr><td>中觀視角</td><td>四禪次第的「以患為觀」邏輯，恰是中觀「破立同時」的體現——每一階的樂受既是階梯（立）也是過患（破）</td></tr></tbody></table><p class="zcp12-note">離欲入禪一品揭示四禪修證的核心辯證：從呵棄愛欲、滅斷欲火而入初禪，卻又發現覺觀如波的微細擾動；破除覺觀入二禪，卻又生起「以喜為患」的新過患；乃至三禪之樂亦被判為「樂則是患」，唯有四禪捨苦樂、護念清淨方臻究竟。這條階梯式的攀升邏輯——「以患為觀，知足捨去」——正是中觀破立同時精神在禪定次第中的具體實踐：每一階段的殊勝樂受，既是通往下一階的階梯，也終將被超越的過患，禪定修證由此呈現出層層辯證、步步昇華的完整圖景。</p></div></div>
+<script id="wy-zcp12-js">(function(){
+var CH=document.querySelectorAll("section.chapter");
+var BTN=document.getElementById("zcp12Btn"),BOX=document.getElementById("zcp12Box"),MODAL=document.getElementById("zcp12Modal");
+if(!CH.length||!BTN||!BOX||!MODAL)return;
+var TARGET=11;
+function curIdx(){var lim=window.innerHeight*0.35,idx=-1;for(var i=0;i<CH.length;i++){if(CH[i].getBoundingClientRect().top<lim)idx=i;}return idx;}
+var FSEL="#floatVideo,.float-video,#vidFab,.vid-fab,#videoFab,#wyVideoBtn,#wyFab,#wy-fab,#vid-floating,#floatingYt,.video-fab,.wy-vbtn,.wy-video-fab,.floating-yt",_fab,_ft=false;
+function fab(){if(_fab&&_fab.isConnected)return _fab;if(_ft)return _fab;_ft=true;_fab=document.querySelector(FSEL);return _fab;}
+function place(){
+  var base=null,eb=document.querySelector(".wy-ebox");
+  if(eb){var r=eb.getBoundingClientRect();if(r.height>4)base=Math.round(window.innerHeight-r.top)+8;}
+  if(base===null){var fEl=fab();if(fEl){var fr=fEl.getBoundingClientRect(),st=getComputedStyle(fEl);if(fr.height>0&&st.display!=="none"&&st.visibility!=="hidden")base=Math.round(window.innerHeight-fr.top)+10;}}
+  if(base===null)base=78;
+  BOX.style.bottom=base+"px";
+}
+function upd(){place();BOX.classList.toggle("show",curIdx()===TARGET);}
+var tk=false;function onS(){if(!tk){tk=true;requestAnimationFrame(function(){tk=false;upd();});}}
+window.addEventListener("scroll",onS,{passive:true});window.addEventListener("resize",onS);
+BTN.addEventListener("click",function(){MODAL.classList.add("open");});
+MODAL.addEventListener("click",function(e){if(e.target===MODAL||e.target.id==="zcp12Close")MODAL.classList.remove("open");});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classList.remove("open");});
+upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
+})();</script>
+<!--WY-ZCP12:END-->
 </body>
 </html>
