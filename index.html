@@ -1331,5 +1331,58 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classL
 upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
 })();</script>
 <!--WY-ZCP17:END-->
+<!--WY-ZCP18:BEGIN-->
+<style id="wy-zcp18-css">
+.zcp18-fabbox{position:fixed;right:22px;bottom:78px;z-index:121;display:none;}
+.zcp18-fabbox.show{display:block;}
+.zcp18-btn{display:inline-flex;align-items:center;gap:9px;font-family:"Noto Sans TC",sans-serif;letter-spacing:.5px;color:#f7ecd2;background:linear-gradient(135deg,#573f38,#2e2420);padding:8px 15px;border-radius:22px;border:1px solid rgba(184,134,11,.6);box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:pointer;opacity:.96;transition:opacity .3s,transform .2s,box-shadow .2s;}
+.zcp18-btn:hover{opacity:1;transform:translateY(-2px);box-shadow:0 6px 22px rgba(184,134,11,.5);}
+.zcp18-ic{font-size:15px;line-height:1;color:#ecc978;}
+.zcp18-ls{display:flex;flex-direction:column;align-items:flex-start;line-height:1.22;}
+.zcp18-l1{font-size:10.5px;font-weight:500;opacity:.82;white-space:nowrap;}
+.zcp18-l2{font-size:13px;font-weight:700;color:#faf1d8;white-space:nowrap;}
+.zcp18-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(28,20,12,.58);padding:16px;}
+.zcp18-modal.open{display:flex;}
+.zcp18-card{position:relative;background:#fbf7ee;max-width:900px;width:100%;max-height:88vh;overflow:auto;border:1px solid #d8c8ac;border-radius:14px;padding:30px 24px 22px;box-shadow:0 18px 50px rgba(0,0,0,.4);}
+.zcp18-card h3{margin:0 0 2px;font-family:"Noto Serif TC",serif;font-size:20px;color:#8b5e3c;}
+.zcp18-card .sub{margin:0 0 14px;font-family:"Noto Sans TC",sans-serif;font-size:13px;color:#6b5b4b;}
+.zcp18-close{position:absolute;top:12px;right:16px;width:34px;height:34px;border:none;border-radius:50%;background:#efe6d4;color:#8b5e3c;font-size:22px;line-height:1;cursor:pointer;z-index:2;}
+.zcp18-close:hover{background:#e3d5b8;}
+.zcp18-tbl{width:100%;border-collapse:collapse;font-family:"Noto Sans TC",sans-serif;font-size:13px;margin:.3em 0 1.2em;}
+.zcp18-tbl caption{font-family:"Noto Serif TC",serif;font-weight:700;color:#8b5e3c;font-size:14.5px;text-align:left;margin:.6em 0 .35em;line-height:1.5;}
+.zcp18-tbl th,.zcp18-tbl td{border:1px solid #d8c8ac;padding:.45em .6em;text-align:left;vertical-align:top;line-height:1.6;}
+.zcp18-tbl thead th{background:#8b5e3c;color:#f7ecd2;font-weight:700;}
+.zcp18-tbl td:first-child{white-space:nowrap;color:#8b5e3c;font-weight:700;background:#f0e8d8;}
+.zcp18-tbl tbody tr:nth-child(even) td{background:#f6efe0;}
+.zcp18-tbl b{color:#8b2500;}
+.zcp18-note{font-size:12px;color:#5a4e3a;line-height:1.9;background:#f6efe0;border-left:3px solid #c4956a;border-radius:0 6px 6px 0;padding:10px 13px;margin:4px 0 0;}
+.zcp18-note b{color:#8b2500;}
+@media(max-width:900px){.zcp18-fabbox{right:14px;}.zcp18-tbl{font-size:11.5px;}.zcp18-card{padding:26px 14px 16px;}}
+</style>
+<div class="zcp18-fabbox" id="zcp18Box"><button class="zcp18-btn" id="zcp18Btn" type="button" aria-label="開啟全景總表"><span class="zcp18-ic">▦</span><span class="zcp18-ls"><span class="zcp18-l1">本品 · 菩薩對治婬瞋・病與藥的終極超越</span><span class="zcp18-l2">如人執燭入雜穀倉 · 藥亦是空八不中道</span></span></button></div><div class="zcp18-modal" id="zcp18Modal" role="dialog" aria-modal="true" aria-label="全景總表"><div class="zcp18-card"><button class="zcp18-close" id="zcp18Close" type="button" aria-label="關閉">×</button><h3>卷下·第七品 三毒中若婬欲偏多 · 全景總表</h3><p class="sub">卷下·第七品｜三十六物九想不淨與十方慈心・厭患危機曲線・大象度駛流三大願力・淨不淨振盪八不中道</p><table class="zcp18-tbl"><caption>一、總命題與菩薩心智工程全局藍圖（本品主骨架）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>總命題</td><td>正反合三段論——菩薩對治婬欲瞋恚，先如聲聞法對治，再超越聲聞法，終歸大乘不共的實相義</td></tr><tr><td>大乘不共法</td><td>聲聞與菩薩的分水嶺——聲聞求自身出離生死，菩薩則於對治過程中同時廣度眾生，不畏生死</td></tr><tr><td>對治婬欲的內觀解剖</td><td>三十六物與六分觀——菩薩先自觀身骨肉皮膚筋脈流血，肝肺腸胃屎尿涕唾，同聲聞不淨觀而更深入</td></tr><tr><td>專注力控制模型</td><td>如人執燭入雜穀倉——喻觀想需精細周密，如持燭遍照倉中每一穀粒，不容絲毫疏漏</td></tr><tr><td>對治瞋恚的空間延展</td><td>十方慈心——念東方眾生慈心清淨無怨無恚，廣大無量，見諸眾生悉在目前，較聲聞慈心觀範圍更廣</td></tr></tbody></table><table class="zcp18-tbl"><caption>二、厭患危機與菩薩的三大願力（辯證轉折）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>邏輯必然副作用</td><td>厭患危機曲線——若得一心，意生厭患，求離此身欲令速滅早入涅槃，此為不淨觀深修後的自然反應</td></tr><tr><td>聲聞乘逃避陷阱</td><td>獼猴駛流——聲聞遇厭患危機時傾向速求出離，如獼猴渡流僅求自身脫困，未能兼顧他人</td></tr><tr><td>大象度流之喻</td><td>菩薩則當如大象度駛流水窮盡源底——不畏水深流急，徹底涉入而後轉出，喻菩薩深入生死而不厭離</td></tr><tr><td>三大願力</td><td>拔苦、度迷、求實——菩薩發大慈大悲，以大功德拔濟眾生，因眾生不知不淨而興起三願</td></tr><tr><td>觀淨門技術性中和劑</td><td>對治厭患的技術調節——既觀不淨則厭生死，當觀淨門繫心三處：鼻端、眉間、額上，平衡厭離與度生的張力</td></tr></tbody></table><table class="zcp18-tbl"><caption>三、藥亦是空與八不中道（勝義昇華）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>淨不淨振盪</td><td>二元對立的必然動盪——有少淨想心生愛著，不淨想多心生厭患，兩極擺盪皆非究竟安穩之境</td></tr><tr><td>藥亦是空</td><td>中觀框架一——觀不淨智從因緣生，故此對治之藥本身亦是緣起假法，非有自性可執</td></tr><tr><td>八不中道</td><td>中觀框架二——實相天平不落淨與不淨兩邊，以不生不滅不常不斷不一不異不來不去中道觀之</td></tr><tr><td>終極境界</td><td>無閉亦無出，不可壞不可動——超越淨與不淨二元振盪後，安住於不動不搖的中道實相</td></tr><tr><td>從對治慈心到實相慈心</td><td>奠基於空性的無緣大慈——凡夫羅漢菩薩三人對比矩陣，揭示唯有空性基礎上的慈心方為究竟無緣大慈</td></tr><tr><td>核心記憶口訣</td><td>五句偈總攝全品要義——完美閉環的大乘辯證法，由對治技術終歸實相般若</td></tr></tbody></table><p class="zcp18-note">菩薩對治婬欲瞋恚一品展現大乘不共法與聲聞法的根本分野：同樣觀身不淨、修習慈心，聲聞求速離生死如獼猴渡流，菩薩則如大象度駛流水窮盡源底，深入而不厭離，發拔苦、度迷、求實三大願力。而「藥亦是空」與「八不中道」的中觀框架，進一步揭示對治婬瞋的種種觀法——不淨觀、慈心觀——本身亦是因緣所生、無自性可執的方便之藥；唯有超越淨與不淨的二元振盪，安住於不生不滅、不可壞不可動的中道實相，方能從對治性的慈心昇華為奠基於空性的無緣大慈，完成菩薩道「病與藥的終極超越」。</p></div></div>
+<script id="wy-zcp18-js">(function(){
+var CH=document.querySelectorAll("section.chapter");
+var BTN=document.getElementById("zcp18Btn"),BOX=document.getElementById("zcp18Box"),MODAL=document.getElementById("zcp18Modal");
+if(!CH.length||!BTN||!BOX||!MODAL)return;
+var TARGET=17;
+function curIdx(){var lim=window.innerHeight*0.35,idx=-1;for(var i=0;i<CH.length;i++){if(CH[i].getBoundingClientRect().top<lim)idx=i;}return idx;}
+var FSEL="#floatVideo,.float-video,#vidFab,.vid-fab,#videoFab,#wyVideoBtn,#wyFab,#wy-fab,#vid-floating,#floatingYt,.video-fab,.wy-vbtn,.wy-video-fab,.floating-yt",_fab,_ft=false;
+function fab(){if(_fab&&_fab.isConnected)return _fab;if(_ft)return _fab;_ft=true;_fab=document.querySelector(FSEL);return _fab;}
+function place(){
+  var base=null,eb=document.querySelector(".wy-ebox");
+  if(eb){var r=eb.getBoundingClientRect();if(r.height>4)base=Math.round(window.innerHeight-r.top)+8;}
+  if(base===null){var fEl=fab();if(fEl){var fr=fEl.getBoundingClientRect(),st=getComputedStyle(fEl);if(fr.height>0&&st.display!=="none"&&st.visibility!=="hidden")base=Math.round(window.innerHeight-fr.top)+10;}}
+  if(base===null)base=78;
+  BOX.style.bottom=base+"px";
+}
+function upd(){place();BOX.classList.toggle("show",curIdx()===TARGET);}
+var tk=false;function onS(){if(!tk){tk=true;requestAnimationFrame(function(){tk=false;upd();});}}
+window.addEventListener("scroll",onS,{passive:true});window.addEventListener("resize",onS);
+BTN.addEventListener("click",function(){MODAL.classList.add("open");});
+MODAL.addEventListener("click",function(e){if(e.target===MODAL||e.target.id==="zcp18Close")MODAL.classList.remove("open");});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classList.remove("open");});
+upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
+})();</script>
+<!--WY-ZCP18:END-->
 </body>
 </html>
