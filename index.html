@@ -1967,5 +1967,58 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classL
 upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
 })();</script>
 <!--WY-ZCP8:END-->
+<!--WY-ZCP9:BEGIN-->
+<style id="wy-zcp9-css">
+.zcp9-fabbox{position:fixed;right:22px;bottom:78px;z-index:121;display:none;}
+.zcp9-fabbox.show{display:block;}
+.zcp9-btn{display:inline-flex;align-items:center;gap:9px;font-family:"Noto Sans TC",sans-serif;letter-spacing:.5px;color:#f7ecd2;background:linear-gradient(135deg,#573f38,#2e2420);padding:8px 15px;border-radius:22px;border:1px solid rgba(184,134,11,.6);box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:pointer;opacity:.96;transition:opacity .3s,transform .2s,box-shadow .2s;}
+.zcp9-btn:hover{opacity:1;transform:translateY(-2px);box-shadow:0 6px 22px rgba(184,134,11,.5);}
+.zcp9-ic{font-size:15px;line-height:1;color:#ecc978;}
+.zcp9-ls{display:flex;flex-direction:column;align-items:flex-start;line-height:1.22;}
+.zcp9-l1{font-size:10.5px;font-weight:500;opacity:.82;white-space:nowrap;}
+.zcp9-l2{font-size:13px;font-weight:700;color:#faf1d8;white-space:nowrap;}
+.zcp9-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(28,20,12,.58);padding:16px;}
+.zcp9-modal.open{display:flex;}
+.zcp9-card{position:relative;background:#fbf7ee;max-width:900px;width:100%;max-height:88vh;overflow:auto;border:1px solid #d8c8ac;border-radius:14px;padding:30px 24px 22px;box-shadow:0 18px 50px rgba(0,0,0,.4);}
+.zcp9-card h3{margin:0 0 2px;font-family:"Noto Serif TC",serif;font-size:20px;color:#8b5e3c;}
+.zcp9-card .sub{margin:0 0 14px;font-family:"Noto Sans TC",sans-serif;font-size:13px;color:#6b5b4b;}
+.zcp9-close{position:absolute;top:12px;right:16px;width:34px;height:34px;border:none;border-radius:50%;background:#efe6d4;color:#8b5e3c;font-size:22px;line-height:1;cursor:pointer;z-index:2;}
+.zcp9-close:hover{background:#e3d5b8;}
+.zcp9-tbl{width:100%;border-collapse:collapse;font-family:"Noto Sans TC",sans-serif;font-size:13px;margin:.3em 0 1.2em;}
+.zcp9-tbl caption{font-family:"Noto Serif TC",serif;font-weight:700;color:#8b5e3c;font-size:14.5px;text-align:left;margin:.6em 0 .35em;line-height:1.5;}
+.zcp9-tbl th,.zcp9-tbl td{border:1px solid #d8c8ac;padding:.45em .6em;text-align:left;vertical-align:top;line-height:1.6;}
+.zcp9-tbl thead th{background:#8b5e3c;color:#f7ecd2;font-weight:700;}
+.zcp9-tbl td:first-child{white-space:nowrap;color:#8b5e3c;font-weight:700;background:#f0e8d8;}
+.zcp9-tbl tbody tr:nth-child(even) td{background:#f6efe0;}
+.zcp9-tbl b{color:#8b2500;}
+.zcp9-note{font-size:12px;color:#5a4e3a;line-height:1.9;background:#f6efe0;border-left:3px solid #c4956a;border-radius:0 6px 6px 0;padding:10px 13px;margin:4px 0 0;}
+.zcp9-note b{color:#8b2500;}
+@media(max-width:900px){.zcp9-fabbox{right:14px;}.zcp9-tbl{font-size:11.5px;}.zcp9-card{padding:26px 14px 16px;}}
+</style>
+<div class="zcp9-fabbox" id="zcp9Box"><button class="zcp9-btn" id="zcp9Btn" type="button" aria-label="開啟全景總表"><span class="zcp9-ic">▦</span><span class="zcp9-ls"><span class="zcp9-l1">本品 · 數息觀・六妙門十六特勝</span><span class="zcp9-l2">數隨止觀轉觀清淨 · 四念處十六行配對</span></span></button></div><div class="zcp9-modal" id="zcp9Modal" role="dialog" aria-modal="true" aria-label="全景總表"><div class="zcp9-card"><button class="zcp9-close" id="zcp9Close" type="button" aria-label="關閉">×</button><h3>卷上·第九品 數息觀 · 全景總表</h3><p class="sub">卷上·第九品｜何以獨選數息斷思覺・數隨止觀轉觀清淨六門・身受心法四念處與十六特勝全景映射</p><table class="zcp9-tbl"><caption>一、六妙門的完整工程（數→隨→止→觀→轉觀→清淨）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>何以獨選數息</td><td>餘觀法寬難失故，數息法急易轉故——如放牛難失守之少事，如放獼猴易失守之多事，思覺易散唯數息急切</td></tr><tr><td>數門</td><td>緊迫盯人的強制收攝——入息至竟數一，出息至竟數二，錯則重數，訓練最基礎的專注力</td></tr><tr><td>隨門</td><td>數字成為負擔後的無縫貼合——當隨莫數，入息出息心念與息俱，破除「一息相」的物理錯覺</td></tr><tr><td>止門</td><td>從勞累的追逐到風門的靜觀——數隨心極，住意風門，念入出息，不再追逐息之出入</td></tr><tr><td>觀門與轉觀門</td><td>觀入息出息時五陰生滅異相；轉觀則捨風門住、離麁觀法，知息無常，直擊無常本質</td></tr><tr><td>清淨門</td><td>從有漏道切入無漏道——除滅五蓋及諸煩惱，今此淨法心獨得清淨</td></tr></tbody></table><table class="zcp9-tbl"><caption>二、四念處與十六行的全景配對（實修映射）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>全景映射</td><td>四念處（身受心法）與十六行（十六特勝）逐一配對，構成完整的止觀修證地圖</td></tr><tr><td>身念處</td><td>知息長短——身心狀態的精確測量；知息遍身——打破皮囊邊界的視覺隱喻，如水入沙遍諸毛孔</td></tr><tr><td>受念處</td><td>治身過、心輕柔軟、禪定心受喜——區辨受喜與受樂的深度差異，捕捉禪定喜樂生起的微觀歷程</td></tr><tr><td>心念處</td><td>受諸心行——全方位心態監控矩陣；心故作喜——主動干預機制，行者可主動調動心念趨向禪定</td></tr><tr><td>息長息短之喻</td><td>如人怖走上山、擔負重、上氣為息短；如人得安息歡喜、如出獄，為息長——以生理經驗定錨微細觀察</td></tr></tbody></table><table class="zcp9-tbl"><caption>三、息之因緣性空與四大無我（中觀收攝）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>息之虛誑不真</td><td>出息從口鼻因緣引之而有，入息因緣心動令生，惑者不知以為息者是風，與外風無異</td></tr><tr><td>五大因緣性空</td><td>地水火空亦復如是，五大因緣合故生識，識亦非我有也——五陰十二入十八持皆是因緣假合</td></tr><tr><td>止觀不可偏廢</td><td>若無攝心，觀想退化為胡思亂想；若無觀照，止定僅是凡夫的呆滯放空——數隨為止，觀轉觀清淨為慧</td></tr><tr><td>六門與十六特勝呼應</td><td>六妙門的「觀」與「轉觀」正對應十六特勝中身受心法四念處的細密拆解，止觀在此完全交融</td></tr><tr><td>修證核心</td><td>從數息的機械訓練到五陰生滅異相的洞察，數息觀最終導向「非我有也」的無我慧觀，銜接下品四禪修證</td></tr></tbody></table><p class="zcp9-note">數息觀以極其工程化的方式展開六妙門——數、隨、止、觀、轉觀、清淨，前三為定、後三為慧，構成從生理錨點通向出世間慧觀的完整階梯。四念處與十六特勝的全景配對，把身受心法的觀察精細到「知息遍身」「受諸心行」等具體操作。而最終的中觀收攝直指核心：呼吸本身亦是因緣假合的虛誑法，如同五大、五陰、十二入、十八持一般「非我有也」——數息觀由此從一項禪修技術，昇華為體證無我實相的入門利器。</p></div></div>
+<script id="wy-zcp9-js">(function(){
+var CH=document.querySelectorAll("section.chapter");
+var BTN=document.getElementById("zcp9Btn"),BOX=document.getElementById("zcp9Box"),MODAL=document.getElementById("zcp9Modal");
+if(!CH.length||!BTN||!BOX||!MODAL)return;
+var TARGET=8;
+function curIdx(){var lim=window.innerHeight*0.35,idx=-1;for(var i=0;i<CH.length;i++){if(CH[i].getBoundingClientRect().top<lim)idx=i;}return idx;}
+var FSEL="#floatVideo,.float-video,#vidFab,.vid-fab,#videoFab,#wyVideoBtn,#wyFab,#wy-fab,#vid-floating,#floatingYt,.video-fab,.wy-vbtn,.wy-video-fab,.floating-yt",_fab,_ft=false;
+function fab(){if(_fab&&_fab.isConnected)return _fab;if(_ft)return _fab;_ft=true;_fab=document.querySelector(FSEL);return _fab;}
+function place(){
+  var base=null,eb=document.querySelector(".wy-ebox");
+  if(eb){var r=eb.getBoundingClientRect();if(r.height>4)base=Math.round(window.innerHeight-r.top)+8;}
+  if(base===null){var fEl=fab();if(fEl){var fr=fEl.getBoundingClientRect(),st=getComputedStyle(fEl);if(fr.height>0&&st.display!=="none"&&st.visibility!=="hidden")base=Math.round(window.innerHeight-fr.top)+10;}}
+  if(base===null)base=78;
+  BOX.style.bottom=base+"px";
+}
+function upd(){place();BOX.classList.toggle("show",curIdx()===TARGET);}
+var tk=false;function onS(){if(!tk){tk=true;requestAnimationFrame(function(){tk=false;upd();});}}
+window.addEventListener("scroll",onS,{passive:true});window.addEventListener("resize",onS);
+BTN.addEventListener("click",function(){MODAL.classList.add("open");});
+MODAL.addEventListener("click",function(e){if(e.target===MODAL||e.target.id==="zcp9Close")MODAL.classList.remove("open");});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classList.remove("open");});
+upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
+})();</script>
+<!--WY-ZCP9:END-->
 </body>
 </html>
