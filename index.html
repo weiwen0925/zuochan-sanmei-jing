@@ -1066,5 +1066,58 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classL
 upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
 })();</script>
 <!--WY-ZCP12:END-->
+<!--WY-ZCP13:BEGIN-->
+<style id="wy-zcp13-css">
+.zcp13-fabbox{position:fixed;right:22px;bottom:78px;z-index:121;display:none;}
+.zcp13-fabbox.show{display:block;}
+.zcp13-btn{display:inline-flex;align-items:center;gap:9px;font-family:"Noto Sans TC",sans-serif;letter-spacing:.5px;color:#f7ecd2;background:linear-gradient(135deg,#573f38,#2e2420);padding:8px 15px;border-radius:22px;border:1px solid rgba(184,134,11,.6);box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:pointer;opacity:.96;transition:opacity .3s,transform .2s,box-shadow .2s;}
+.zcp13-btn:hover{opacity:1;transform:translateY(-2px);box-shadow:0 6px 22px rgba(184,134,11,.5);}
+.zcp13-ic{font-size:15px;line-height:1;color:#ecc978;}
+.zcp13-ls{display:flex;flex-direction:column;align-items:flex-start;line-height:1.22;}
+.zcp13-l1{font-size:10.5px;font-weight:500;opacity:.82;white-space:nowrap;}
+.zcp13-l2{font-size:13px;font-weight:700;color:#faf1d8;white-space:nowrap;}
+.zcp13-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(28,20,12,.58);padding:16px;}
+.zcp13-modal.open{display:flex;}
+.zcp13-card{position:relative;background:#fbf7ee;max-width:900px;width:100%;max-height:88vh;overflow:auto;border:1px solid #d8c8ac;border-radius:14px;padding:30px 24px 22px;box-shadow:0 18px 50px rgba(0,0,0,.4);}
+.zcp13-card h3{margin:0 0 2px;font-family:"Noto Serif TC",serif;font-size:20px;color:#8b5e3c;}
+.zcp13-card .sub{margin:0 0 14px;font-family:"Noto Sans TC",sans-serif;font-size:13px;color:#6b5b4b;}
+.zcp13-close{position:absolute;top:12px;right:16px;width:34px;height:34px;border:none;border-radius:50%;background:#efe6d4;color:#8b5e3c;font-size:22px;line-height:1;cursor:pointer;z-index:2;}
+.zcp13-close:hover{background:#e3d5b8;}
+.zcp13-tbl{width:100%;border-collapse:collapse;font-family:"Noto Sans TC",sans-serif;font-size:13px;margin:.3em 0 1.2em;}
+.zcp13-tbl caption{font-family:"Noto Serif TC",serif;font-weight:700;color:#8b5e3c;font-size:14.5px;text-align:left;margin:.6em 0 .35em;line-height:1.5;}
+.zcp13-tbl th,.zcp13-tbl td{border:1px solid #d8c8ac;padding:.45em .6em;text-align:left;vertical-align:top;line-height:1.6;}
+.zcp13-tbl thead th{background:#8b5e3c;color:#f7ecd2;font-weight:700;}
+.zcp13-tbl td:first-child{white-space:nowrap;color:#8b5e3c;font-weight:700;background:#f0e8d8;}
+.zcp13-tbl tbody tr:nth-child(even) td{background:#f6efe0;}
+.zcp13-tbl b{color:#8b2500;}
+.zcp13-note{font-size:12px;color:#5a4e3a;line-height:1.9;background:#f6efe0;border-left:3px solid #c4956a;border-radius:0 6px 6px 0;padding:10px 13px;margin:4px 0 0;}
+.zcp13-note b{color:#8b2500;}
+@media(max-width:900px){.zcp13-fabbox{right:14px;}.zcp13-tbl{font-size:11.5px;}.zcp13-card{padding:26px 14px 16px;}}
+</style>
+<div class="zcp13-fabbox" id="zcp13Box"><button class="zcp13-btn" id="zcp13Btn" type="button" aria-label="開啟全景總表"><span class="zcp13-ic">▦</span><span class="zcp13-ls"><span class="zcp13-l1">本品 · 漸觀空處・四無色定</span><span class="zcp13-l2">五通變現與神足唯心物理學</span></span></button></div><div class="zcp13-modal" id="zcp13Modal" role="dialog" aria-modal="true" aria-label="全景總表"><div class="zcp13-card"><button class="zcp13-close" id="zcp13Close" type="button" aria-label="關閉">×</button><h3>卷下·第二品 漸觀空處 · 全景總表</h3><p class="sub">卷下·第二品｜四無色定階梯攀升・四無量心三昧・五通變現與飛行力學・十四變化心權限層級・涅槃二根器</p><table class="zcp13-tbl"><caption>一、超越禪定操作手冊的修證地圖（本品主骨架）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>四重宇宙模型</td><td>四無色定（空處、識處、無所有處、非有想非無想處）構成超越色界的四重階梯</td></tr><tr><td>空處</td><td>破內外色想，滅有對想，觀無量空處，觀色過——由破除物質色相的執著開始</td></tr><tr><td>識處與無所有處</td><td>念無量識處觀空處過；念無所有處觀識處過——空間向意識內聚，主客觀逐步雙泯</td></tr><tr><td>非有想非無想處</td><td>若一切想其患甚多、若病若瘡，是第一安隱善處——四無色定的頂峰，非有想非無想的極限平衡</td></tr><tr><td>三大操作心法</td><td>貫穿全品的雙軌心理槓桿——觀過（觀察前一階段之過患）與念功德（憶念更高階段之殊勝功德）</td></tr></tbody></table><table class="zcp13-tbl"><caption>二、四無量心與五通變現的唯心物理學（實修拓展）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>四無量心三昧</td><td>慈心破瞋恚毒、悲心破眾惱、喜心破不悅、護心破苦樂——先自得樂，次及十方無量眾生</td></tr><tr><td>神足動力源</td><td>四力合一——欲定、精進定、一心定、慧定，四力令其廣大而身更小，便能運身飛行</td></tr><tr><td>飛行力學</td><td>身心密度精準調控（觀身常作輕想）＋空間座標唯心摺疊（觀身空界，如大風力致重達遠）</td></tr><tr><td>變化物質種分解析</td><td>木有地種分故，除却餘種便變為地——物質重組的唯心煉金術，水火風空金銀寶物皆可如是變化</td></tr><tr><td>十四變化心權限層級</td><td>初禪二果、二禪三果、三禪四果、四禪五果——依禪定深淺決定變化神通的權限範圍</td></tr></tbody></table><table class="zcp13-tbl"><caption>三、涅槃二根器與四無量心掛載關係（勝義昇華）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>深厚禪定的迴向閥門</td><td>四無量心與四禪的掛載關係——禪定深度決定慈悲喜捨四無量心的功能對應與發揮範圍</td></tr><tr><td>路徑分歧</td><td>好定多者先學禪法後學涅槃，以快樂故；好智多者直趣涅槃，畏苦患故——志求涅槃的二種根器</td></tr><tr><td>對照解析</td><td>定多者次第漸進，先禪後慧；智多者專心不散直求涅槃，越愛等諸煩惱，直趣解脫</td></tr><tr><td>神足與空性呼應</td><td>飛行變化雖是深廣禪定成就的展現，然其唯心本質亦印證「一切法從心想生」，與性空義理相通</td></tr><tr><td>全品收束</td><td>由破色入空、轉空為識、識滅無所，到非有想非無想的極限平衡，展現一條層層超越、直探禪定深處的完整地圖</td></tr></tbody></table><p class="zcp13-note">漸觀空處一品鋪陳出四無色定的階梯攀升——從破色入空、轉空為識，到識滅無所、非有想非無想的極限平衡，展現主客觀雙泯的深邃歷程。四無量心與五通變現則進一步把禪定的力量向外拓展：慈悲喜捨的無量心以四禪為載體層層深化，神足飛行與物質變化更揭示「一切法從心想生」的唯心物理學。而志求涅槃的「好定多」與「好智多」二種根器，說明修證途徑雖有先禪後慧與直趣涅槃之別，終究殊途同歸——這正是本品作為超越禪定操作手冊的大乘修證地圖之所在。</p></div></div>
+<script id="wy-zcp13-js">(function(){
+var CH=document.querySelectorAll("section.chapter");
+var BTN=document.getElementById("zcp13Btn"),BOX=document.getElementById("zcp13Box"),MODAL=document.getElementById("zcp13Modal");
+if(!CH.length||!BTN||!BOX||!MODAL)return;
+var TARGET=12;
+function curIdx(){var lim=window.innerHeight*0.35,idx=-1;for(var i=0;i<CH.length;i++){if(CH[i].getBoundingClientRect().top<lim)idx=i;}return idx;}
+var FSEL="#floatVideo,.float-video,#vidFab,.vid-fab,#videoFab,#wyVideoBtn,#wyFab,#wy-fab,#vid-floating,#floatingYt,.video-fab,.wy-vbtn,.wy-video-fab,.floating-yt",_fab,_ft=false;
+function fab(){if(_fab&&_fab.isConnected)return _fab;if(_ft)return _fab;_ft=true;_fab=document.querySelector(FSEL);return _fab;}
+function place(){
+  var base=null,eb=document.querySelector(".wy-ebox");
+  if(eb){var r=eb.getBoundingClientRect();if(r.height>4)base=Math.round(window.innerHeight-r.top)+8;}
+  if(base===null){var fEl=fab();if(fEl){var fr=fEl.getBoundingClientRect(),st=getComputedStyle(fEl);if(fr.height>0&&st.display!=="none"&&st.visibility!=="hidden")base=Math.round(window.innerHeight-fr.top)+10;}}
+  if(base===null)base=78;
+  BOX.style.bottom=base+"px";
+}
+function upd(){place();BOX.classList.toggle("show",curIdx()===TARGET);}
+var tk=false;function onS(){if(!tk){tk=true;requestAnimationFrame(function(){tk=false;upd();});}}
+window.addEventListener("scroll",onS,{passive:true});window.addEventListener("resize",onS);
+BTN.addEventListener("click",function(){MODAL.classList.add("open");});
+MODAL.addEventListener("click",function(e){if(e.target===MODAL||e.target.id==="zcp13Close")MODAL.classList.remove("open");});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classList.remove("open");});
+upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
+})();</script>
+<!--WY-ZCP13:END-->
 </body>
 </html>
