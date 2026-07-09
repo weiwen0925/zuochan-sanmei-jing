@@ -1278,5 +1278,58 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classL
 upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
 })();</script>
 <!--WY-ZCP16:END-->
+<!--WY-ZCP17:BEGIN-->
+<style id="wy-zcp17-css">
+.zcp17-fabbox{position:fixed;right:22px;bottom:78px;z-index:121;display:none;}
+.zcp17-fabbox.show{display:block;}
+.zcp17-btn{display:inline-flex;align-items:center;gap:9px;font-family:"Noto Sans TC",sans-serif;letter-spacing:.5px;color:#f7ecd2;background:linear-gradient(135deg,#573f38,#2e2420);padding:8px 15px;border-radius:22px;border:1px solid rgba(184,134,11,.6);box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:pointer;opacity:.96;transition:opacity .3s,transform .2s,box-shadow .2s;}
+.zcp17-btn:hover{opacity:1;transform:translateY(-2px);box-shadow:0 6px 22px rgba(184,134,11,.5);}
+.zcp17-ic{font-size:15px;line-height:1;color:#ecc978;}
+.zcp17-ls{display:flex;flex-direction:column;align-items:flex-start;line-height:1.22;}
+.zcp17-l1{font-size:10.5px;font-weight:500;opacity:.82;white-space:nowrap;}
+.zcp17-l2{font-size:13px;font-weight:700;color:#faf1d8;white-space:nowrap;}
+.zcp17-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(28,20,12,.58);padding:16px;}
+.zcp17-modal.open{display:flex;}
+.zcp17-card{position:relative;background:#fbf7ee;max-width:900px;width:100%;max-height:88vh;overflow:auto;border:1px solid #d8c8ac;border-radius:14px;padding:30px 24px 22px;box-shadow:0 18px 50px rgba(0,0,0,.4);}
+.zcp17-card h3{margin:0 0 2px;font-family:"Noto Serif TC",serif;font-size:20px;color:#8b5e3c;}
+.zcp17-card .sub{margin:0 0 14px;font-family:"Noto Sans TC",sans-serif;font-size:13px;color:#6b5b4b;}
+.zcp17-close{position:absolute;top:12px;right:16px;width:34px;height:34px;border:none;border-radius:50%;background:#efe6d4;color:#8b5e3c;font-size:22px;line-height:1;cursor:pointer;z-index:2;}
+.zcp17-close:hover{background:#e3d5b8;}
+.zcp17-tbl{width:100%;border-collapse:collapse;font-family:"Noto Sans TC",sans-serif;font-size:13px;margin:.3em 0 1.2em;}
+.zcp17-tbl caption{font-family:"Noto Serif TC",serif;font-weight:700;color:#8b5e3c;font-size:14.5px;text-align:left;margin:.6em 0 .35em;line-height:1.5;}
+.zcp17-tbl th,.zcp17-tbl td{border:1px solid #d8c8ac;padding:.45em .6em;text-align:left;vertical-align:top;line-height:1.6;}
+.zcp17-tbl thead th{background:#8b5e3c;color:#f7ecd2;font-weight:700;}
+.zcp17-tbl td:first-child{white-space:nowrap;color:#8b5e3c;font-weight:700;background:#f0e8d8;}
+.zcp17-tbl tbody tr:nth-child(even) td{background:#f6efe0;}
+.zcp17-tbl b{color:#8b2500;}
+.zcp17-note{font-size:12px;color:#5a4e3a;line-height:1.9;background:#f6efe0;border-left:3px solid #c4956a;border-radius:0 6px 6px 0;padding:10px 13px;margin:4px 0 0;}
+.zcp17-note b{color:#8b2500;}
+@media(max-width:900px){.zcp17-fabbox{right:14px;}.zcp17-tbl{font-size:11.5px;}.zcp17-card{padding:26px 14px 16px;}}
+</style>
+<div class="zcp17-fabbox" id="zcp17Box"><button class="zcp17-btn" id="zcp17Btn" type="button" aria-label="開啟全景總表"><span class="zcp17-ic">▦</span><span class="zcp17-ls"><span class="zcp17-l1">本品 · 菩薩念佛三昧・十方諸佛生身</span><span class="zcp17-l2">攝心觀相念德起悲立誓三階口訣</span></span></button></div><div class="zcp17-modal" id="zcp17Modal" role="dialog" aria-modal="true" aria-label="全景總表"><div class="zcp17-card"><button class="zcp17-close" id="zcp17Close" type="button" aria-label="關閉">×</button><h3>卷下·第六品 繫心專念十方三世諸佛生身 · 全景總表</h3><p class="sub">卷下·第六品｜絕對排他所緣境構築・一切悉見三昧・厚罪令薄薄者令滅・貴家盲子譬喻三願鎧甲・以幻治幻</p><table class="zcp17-tbl"><caption>一、雙重驅動引擎與菩薩念佛三昧架構（本品主骨架）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>本品定位</td><td>菩薩道求佛道入禪，先當繫心專念十方三世諸佛生身——區別於前品聲聞念佛觀像，此為菩薩不共法門</td></tr><tr><td>雙重驅動引擎</td><td>觀相攝心的定力工程＋念德起悲的慈悲工程——兩股力量共同推動菩薩念佛三昧的完整運作</td></tr><tr><td>三階口訣</td><td>絕塵念佛相→憶德滅空罪→憫盲披願鎧——攝心觀相、念德起悲、立誓度生三階段層層遞進</td></tr><tr><td>中論視角深度論證</td><td>本品特別引入《中論》視角，論證執相觀想與一切法空是否相違，展開更深的哲學辯證</td></tr></tbody></table><table class="zcp17-tbl"><caption>二、絕對所緣境構築與功德全景（觀相與念德）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>排他先決條件</td><td>攝心觀相之所以困難，不在佛身難觀，而在凡夫心無時不在攀緣世間萬物——需先建立絕對排他的所緣境</td></tr><tr><td>三大譬喻所緣屬性</td><td>經文以三個譬喻刻畫所緣境所需具備的屬性，確保專念不散</td></tr><tr><td>一切悉見三昧</td><td>跨越時空的全景——觀相攝心功深，能悉見十方三世一切諸佛</td></tr><tr><td>還攝令住閉環</td><td>心念偏離所緣時的校正機制——還攝令住，確保觀相不因散亂而崩解</td></tr><tr><td>厚罪令薄薄者令滅</td><td>菩薩得是三昧，除無量劫厚罪令薄、薄者令滅——念佛三昧兼具強大的淨化業障功能</td></tr><tr><td>佛功德全景</td><td>智、解、見、德四個維度全面鋪陳佛陀功德，作為念德起悲階段的觀想內容</td></tr></tbody></table><table class="zcp17-tbl"><caption>三、悲願鎧甲與以幻治幻（勝義昇華）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>貴家盲子譬喻</td><td>悲憫的源頭——如貴家子忽然盲目不見道路，喻眾生本具佛性卻因無明障蔽而迷失於生死</td></tr><tr><td>三願鎧甲</td><td>外破魔眾、內擊結賊、直入不迴——三重誓願構成菩薩度生的堅固防護與前進動力</td></tr><tr><td>執相與空性辯證</td><td>核心問題——執相觀想與一切法空是否相違？以幻治幻、清淨置換，破解此表面矛盾</td></tr><tr><td>假名對治</td><td>念佛身作為假名工具——罪業無自性，業報不失而緣起可滅，念佛觀想是善巧的假名施設</td></tr><tr><td>見空起悲</td><td>真實悲憫的源頭——正因照見眾生本空而又業報宛然，方能生起無所執著卻又真切熾烈的大悲</td></tr><tr><td>心智建築總圖</td><td>攝心觀相→念德起悲→立誓度生，三階段構成菩薩念佛三昧完整的心智建築總圖</td></tr></tbody></table><p class="zcp17-note">菩薩專念十方三世諸佛生身一品，展現念佛法門在菩薩道中的深化——不僅是攝心止散的定力工程，更透過念德起悲昇華為度生濟世的悲願工程。厚罪令薄、薄者令滅揭示念佛三昧強大的淨化業障功能；貴家盲子之喻則道出菩薩悲憫的深層根源——眾生本具佛性卻因無明而迷失。全品最精妙處在於以《中論》視角化解「執相觀想」與「一切法空」的表面矛盾：念佛身是假名對治的善巧工具，正因罪業無自性、緣起可滅，觀想才能真實有效；而正因照見眾生本空又業報宛然，才生起既無所執著、又真切熾烈的大悲——以幻治幻，見空起悲，這正是菩薩念佛三昧不同於聲聞觀像的深刻不共之處。</p></div></div>
+<script id="wy-zcp17-js">(function(){
+var CH=document.querySelectorAll("section.chapter");
+var BTN=document.getElementById("zcp17Btn"),BOX=document.getElementById("zcp17Box"),MODAL=document.getElementById("zcp17Modal");
+if(!CH.length||!BTN||!BOX||!MODAL)return;
+var TARGET=16;
+function curIdx(){var lim=window.innerHeight*0.35,idx=-1;for(var i=0;i<CH.length;i++){if(CH[i].getBoundingClientRect().top<lim)idx=i;}return idx;}
+var FSEL="#floatVideo,.float-video,#vidFab,.vid-fab,#videoFab,#wyVideoBtn,#wyFab,#wy-fab,#vid-floating,#floatingYt,.video-fab,.wy-vbtn,.wy-video-fab,.floating-yt",_fab,_ft=false;
+function fab(){if(_fab&&_fab.isConnected)return _fab;if(_ft)return _fab;_ft=true;_fab=document.querySelector(FSEL);return _fab;}
+function place(){
+  var base=null,eb=document.querySelector(".wy-ebox");
+  if(eb){var r=eb.getBoundingClientRect();if(r.height>4)base=Math.round(window.innerHeight-r.top)+8;}
+  if(base===null){var fEl=fab();if(fEl){var fr=fEl.getBoundingClientRect(),st=getComputedStyle(fEl);if(fr.height>0&&st.display!=="none"&&st.visibility!=="hidden")base=Math.round(window.innerHeight-fr.top)+10;}}
+  if(base===null)base=78;
+  BOX.style.bottom=base+"px";
+}
+function upd(){place();BOX.classList.toggle("show",curIdx()===TARGET);}
+var tk=false;function onS(){if(!tk){tk=true;requestAnimationFrame(function(){tk=false;upd();});}}
+window.addEventListener("scroll",onS,{passive:true});window.addEventListener("resize",onS);
+BTN.addEventListener("click",function(){MODAL.classList.add("open");});
+MODAL.addEventListener("click",function(e){if(e.target===MODAL||e.target.id==="zcp17Close")MODAL.classList.remove("open");});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classList.remove("open");});
+upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
+})();</script>
+<!--WY-ZCP17:END-->
 </body>
 </html>
