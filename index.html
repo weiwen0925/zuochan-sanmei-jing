@@ -1119,5 +1119,58 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classL
 upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
 })();</script>
 <!--WY-ZCP13:END-->
+<!--WY-ZCP14:BEGIN-->
+<style id="wy-zcp14-css">
+.zcp14-fabbox{position:fixed;right:22px;bottom:78px;z-index:121;display:none;}
+.zcp14-fabbox.show{display:block;}
+.zcp14-btn{display:inline-flex;align-items:center;gap:9px;font-family:"Noto Sans TC",sans-serif;letter-spacing:.5px;color:#f7ecd2;background:linear-gradient(135deg,#573f38,#2e2420);padding:8px 15px;border-radius:22px;border:1px solid rgba(184,134,11,.6);box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:pointer;opacity:.96;transition:opacity .3s,transform .2s,box-shadow .2s;}
+.zcp14-btn:hover{opacity:1;transform:translateY(-2px);box-shadow:0 6px 22px rgba(184,134,11,.5);}
+.zcp14-ic{font-size:15px;line-height:1;color:#ecc978;}
+.zcp14-ls{display:flex;flex-direction:column;align-items:flex-start;line-height:1.22;}
+.zcp14-l1{font-size:10.5px;font-weight:500;opacity:.82;white-space:nowrap;}
+.zcp14-l2{font-size:13px;font-weight:700;color:#faf1d8;white-space:nowrap;}
+.zcp14-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(28,20,12,.58);padding:16px;}
+.zcp14-modal.open{display:flex;}
+.zcp14-card{position:relative;background:#fbf7ee;max-width:900px;width:100%;max-height:88vh;overflow:auto;border:1px solid #d8c8ac;border-radius:14px;padding:30px 24px 22px;box-shadow:0 18px 50px rgba(0,0,0,.4);}
+.zcp14-card h3{margin:0 0 2px;font-family:"Noto Serif TC",serif;font-size:20px;color:#8b5e3c;}
+.zcp14-card .sub{margin:0 0 14px;font-family:"Noto Sans TC",sans-serif;font-size:13px;color:#6b5b4b;}
+.zcp14-close{position:absolute;top:12px;right:16px;width:34px;height:34px;border:none;border-radius:50%;background:#efe6d4;color:#8b5e3c;font-size:22px;line-height:1;cursor:pointer;z-index:2;}
+.zcp14-close:hover{background:#e3d5b8;}
+.zcp14-tbl{width:100%;border-collapse:collapse;font-family:"Noto Sans TC",sans-serif;font-size:13px;margin:.3em 0 1.2em;}
+.zcp14-tbl caption{font-family:"Noto Serif TC",serif;font-weight:700;color:#8b5e3c;font-size:14.5px;text-align:left;margin:.6em 0 .35em;line-height:1.5;}
+.zcp14-tbl th,.zcp14-tbl td{border:1px solid #d8c8ac;padding:.45em .6em;text-align:left;vertical-align:top;line-height:1.6;}
+.zcp14-tbl thead th{background:#8b5e3c;color:#f7ecd2;font-weight:700;}
+.zcp14-tbl td:first-child{white-space:nowrap;color:#8b5e3c;font-weight:700;background:#f0e8d8;}
+.zcp14-tbl tbody tr:nth-child(even) td{background:#f6efe0;}
+.zcp14-tbl b{color:#8b2500;}
+.zcp14-note{font-size:12px;color:#5a4e3a;line-height:1.9;background:#f6efe0;border-left:3px solid #c4956a;border-radius:0 6px 6px 0;padding:10px 13px;margin:4px 0 0;}
+.zcp14-note b{color:#8b2500;}
+@media(max-width:900px){.zcp14-fabbox{right:14px;}.zcp14-tbl{font-size:11.5px;}.zcp14-card{padding:26px 14px 16px;}}
+</style>
+<div class="zcp14-fabbox" id="zcp14Box"><button class="zcp14-btn" id="zcp14Btn" type="button" aria-label="開啟全景總表"><span class="zcp14-ic">▦</span><span class="zcp14-ls"><span class="zcp14-l1">本品 · 四念處・出世間慧觀</span><span class="zcp14-l2">身受心法四維拆解 · 中觀黃金推論鏈</span></span></button></div><div class="zcp14-modal" id="zcp14Modal" role="dialog" aria-modal="true" aria-label="全景總表"><div class="zcp14-card"><button class="zcp14-close" id="zcp14Close" type="button" aria-label="關閉">×</button><h3>卷下·第三品 無常、苦、不淨、無我 · 全景總表</h3><p class="sub">卷下·第三品｜四顛倒核心命題・身念止痛念止心念止法念止四維拆解・日愛珠意識生成方程式・破斥神我</p><table class="zcp14-tbl"><caption>一、四顛倒的核心命題與四念處總綱（本品主骨架）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>四顛倒命題</td><td>身實無常苦不淨無我，以心顛倒故常樂我淨——以是故事事愛著其身，是則底下眾生</td></tr><tr><td>認知解構矩陣</td><td>四念處（身受心法）各自標靶對治一種顛倒——身念止對不淨、痛念止對苦、心念止對常、法念止對我</td></tr><tr><td>觀修三重視角</td><td>內身、外身、內外身——三重視角交叉觀照，避免落入單一角度的觀察盲點</td></tr><tr><td>身念止四維拆解</td><td>從因緣生故無常，種種惱故苦，三十六物故不淨，不得自在故無我——四維度完整拆解色身實相</td></tr></tbody></table><table class="zcp14-tbl"><caption>二、痛念止與心念止的深度辨析（觀受觀心）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>樂的相對性</td><td>瘡藥與易肩兩喻——如患瘡以藥塗治痛止為樂，如擔重易肩以新重為樂，皆非實樂，只是苦的負值微積分</td></tr><tr><td>欲樂三重悖論</td><td>以婬欲為例的哲學檢驗——若是實樂不應有不樂，如火性熱無暫冷時，證明欲樂非實常樂</td></tr><tr><td>痛念止觀察定則</td><td>樂痛應觀苦，苦痛應觀樂，如箭在體，不苦不樂應觀生滅無常</td></tr><tr><td>心念止·相似生故</td><td>心無常，從因緣生，生滅不住，相似生故，但顛倒故謂是為一——心之相續實為剎那生滅的錯覺</td></tr><tr><td>日愛珠之喻</td><td>如日愛珠，有日有珠有乾草牛屎，眾緣和合於是火生，一一推求火不可得，緣合有火——意識生成方程式</td></tr></tbody></table><table class="zcp14-tbl"><caption>三、法念止的終極叩問與破斥神我（勝義昇華）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>觀心屬誰</td><td>終極叩問——觀想思惟念欲等諸心相應法不相應法，諦觀其主，主不可得</td></tr><tr><td>中觀黃金推論鏈</td><td>從因緣生故無常，無常故苦，苦故不自在，不自在故無主，無主故空——環環相扣的必然邏輯</td></tr><tr><td>破斥神我</td><td>若常有神者，無殺惱罪，亦無涅槃；若身是神，無常身滅，神亦應滅，亦無後世亦無罪福——破神我摧毀解脫系統的謬誤前提</td></tr><tr><td>四維統一結論</td><td>身受心法四念處不是孤立技術，而是同一套演算法的四個應用——無常故苦、苦故無我、無我故空</td></tr><tr><td>深舍摩陀與究竟實相觀</td><td>動機、心態、安住、究竟實相觀——四念處修習最終導向對「苦」之病灶的精確界定與如實觀照</td></tr></tbody></table><p class="zcp14-note">四念處一品以身受心法四維度，系統性拆解「常樂我淨」的四重顛倒：身念止見不淨、痛念止見苦、心念止見無常、法念止見無我。日愛珠之喻精妙揭示意識如同因緣和合所生之火——一一推求皆不可得，卻又緣合宛然而有；而法念止最終的黃金推論鏈——從因緣生故無常，無常故苦，苦故不自在，不自在故無主，無主故空——徹底破斥神我常存的謬誤前提。四念處由此不是四種孤立的觀察技術，而是同一套中觀演算法在身、受、心、法四個面向上的一致展開，共同指向「諸法皆空不自在」的出世間慧觀基礎。</p></div></div>
+<script id="wy-zcp14-js">(function(){
+var CH=document.querySelectorAll("section.chapter");
+var BTN=document.getElementById("zcp14Btn"),BOX=document.getElementById("zcp14Box"),MODAL=document.getElementById("zcp14Modal");
+if(!CH.length||!BTN||!BOX||!MODAL)return;
+var TARGET=13;
+function curIdx(){var lim=window.innerHeight*0.35,idx=-1;for(var i=0;i<CH.length;i++){if(CH[i].getBoundingClientRect().top<lim)idx=i;}return idx;}
+var FSEL="#floatVideo,.float-video,#vidFab,.vid-fab,#videoFab,#wyVideoBtn,#wyFab,#wy-fab,#vid-floating,#floatingYt,.video-fab,.wy-vbtn,.wy-video-fab,.floating-yt",_fab,_ft=false;
+function fab(){if(_fab&&_fab.isConnected)return _fab;if(_ft)return _fab;_ft=true;_fab=document.querySelector(FSEL);return _fab;}
+function place(){
+  var base=null,eb=document.querySelector(".wy-ebox");
+  if(eb){var r=eb.getBoundingClientRect();if(r.height>4)base=Math.round(window.innerHeight-r.top)+8;}
+  if(base===null){var fEl=fab();if(fEl){var fr=fEl.getBoundingClientRect(),st=getComputedStyle(fEl);if(fr.height>0&&st.display!=="none"&&st.visibility!=="hidden")base=Math.round(window.innerHeight-fr.top)+10;}}
+  if(base===null)base=78;
+  BOX.style.bottom=base+"px";
+}
+function upd(){place();BOX.classList.toggle("show",curIdx()===TARGET);}
+var tk=false;function onS(){if(!tk){tk=true;requestAnimationFrame(function(){tk=false;upd();});}}
+window.addEventListener("scroll",onS,{passive:true});window.addEventListener("resize",onS);
+BTN.addEventListener("click",function(){MODAL.classList.add("open");});
+MODAL.addEventListener("click",function(e){if(e.target===MODAL||e.target.id==="zcp14Close")MODAL.classList.remove("open");});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classList.remove("open");});
+upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
+})();</script>
+<!--WY-ZCP14:END-->
 </body>
 </html>
