@@ -2020,5 +2020,48 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classL
 upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
 })();</script>
 <!--WY-ZCP9:END-->
+<!--WY-ZCTOC:BEGIN-->
+<style id="wy-zctoc-css">
+.toc-actions{position:absolute;right:14px;bottom:12px;z-index:3;display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end;}
+.toc-actions .toc-video-btn{position:static !important;right:auto !important;bottom:auto !important;}
+.toc-tbl{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:14px;cursor:pointer;background:linear-gradient(135deg,#8b5e3c,#a9803f);color:#fff;font-family:"Noto Sans TC",sans-serif;font-size:12px;letter-spacing:1px;font-weight:600;line-height:1.25;white-space:nowrap;box-shadow:0 1px 4px rgba(139,94,60,.4);border:1px solid rgba(255,255,255,.2);user-select:none;transition:filter .2s,transform .2s,box-shadow .2s;}
+.toc-tbl:hover{filter:brightness(1.08);transform:translateY(-1px);box-shadow:0 4px 12px rgba(139,94,60,.5);}
+.toc-tbl:focus-visible{outline:2px solid #d4a84b;outline-offset:2px;}
+.toc-tbl .tt-ic{font-size:11px;line-height:1;}
+@media(max-width:520px){.toc-tbl{padding:4px 10px;letter-spacing:.3px;}}
+</style>
+<script id="wy-zctoc-js">(function(){
+function nOf(a){var m=(a.getAttribute('href')||'').match(/#ch-(\d+)/);return m?m[1]:null;}
+function build(){
+  var links=document.querySelectorAll('a.toc-link');
+  for(var i=0;i<links.length;i++){
+    var link=links[i], wrap=link.parentNode;
+    if(!wrap||wrap.querySelector('.toc-actions'))continue;
+    var n=nOf(link);if(!n)continue;
+    var act=document.createElement('div');act.className='toc-actions';
+    var tbl=document.createElement('span');tbl.className='toc-tbl';tbl.setAttribute('data-tbl',n);
+    tbl.setAttribute('role','button');tbl.setAttribute('tabindex','0');
+    tbl.setAttribute('aria-label','第'+n+'品 全景總表');tbl.title='本品全景總表';
+    tbl.innerHTML='<span class="tt-ic">\u25a6</span>總表';
+    act.appendChild(tbl);
+    var vid=wrap.querySelector('.toc-video-btn');if(vid){act.appendChild(vid);}
+    wrap.appendChild(act);
+  }
+}
+function openT(n){var m=document.getElementById('zcp'+n+'Modal');if(m){m.classList.add('open');}else{location.hash='#ch-'+n;}}
+document.addEventListener('click',function(e){
+  var b=(e.target&&e.target.closest)?e.target.closest('.toc-tbl'):null;if(!b)return;
+  e.preventDefault();e.stopPropagation();openT(b.getAttribute('data-tbl'));
+},true);
+document.addEventListener('keydown',function(e){
+  if(e.key!=='Enter'&&e.key!==' ')return;
+  var b=(e.target&&e.target.closest)?e.target.closest('.toc-tbl'):null;if(!b)return;
+  e.preventDefault();openT(b.getAttribute('data-tbl'));
+});
+build();
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',build);
+var c=0,iv=setInterval(function(){build();if(++c>20)clearInterval(iv);},250);
+})();</script>
+<!--WY-ZCTOC:END-->
 </body>
 </html>
