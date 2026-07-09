@@ -1755,5 +1755,58 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classL
 upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
 })();</script>
 <!--WY-ZCP4:END-->
+<!--WY-ZCP5:BEGIN-->
+<style id="wy-zcp5-css">
+.zcp5-fabbox{position:fixed;right:22px;bottom:78px;z-index:121;display:none;}
+.zcp5-fabbox.show{display:block;}
+.zcp5-btn{display:inline-flex;align-items:center;gap:9px;font-family:"Noto Sans TC",sans-serif;letter-spacing:.5px;color:#f7ecd2;background:linear-gradient(135deg,#573f38,#2e2420);padding:8px 15px;border-radius:22px;border:1px solid rgba(184,134,11,.6);box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:pointer;opacity:.96;transition:opacity .3s,transform .2s,box-shadow .2s;}
+.zcp5-btn:hover{opacity:1;transform:translateY(-2px);box-shadow:0 6px 22px rgba(184,134,11,.5);}
+.zcp5-ic{font-size:15px;line-height:1;color:#ecc978;}
+.zcp5-ls{display:flex;flex-direction:column;align-items:flex-start;line-height:1.22;}
+.zcp5-l1{font-size:10.5px;font-weight:500;opacity:.82;white-space:nowrap;}
+.zcp5-l2{font-size:13px;font-weight:700;color:#faf1d8;white-space:nowrap;}
+.zcp5-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(28,20,12,.58);padding:16px;}
+.zcp5-modal.open{display:flex;}
+.zcp5-card{position:relative;background:#fbf7ee;max-width:900px;width:100%;max-height:88vh;overflow:auto;border:1px solid #d8c8ac;border-radius:14px;padding:30px 24px 22px;box-shadow:0 18px 50px rgba(0,0,0,.4);}
+.zcp5-card h3{margin:0 0 2px;font-family:"Noto Serif TC",serif;font-size:20px;color:#8b5e3c;}
+.zcp5-card .sub{margin:0 0 14px;font-family:"Noto Sans TC",sans-serif;font-size:13px;color:#6b5b4b;}
+.zcp5-close{position:absolute;top:12px;right:16px;width:34px;height:34px;border:none;border-radius:50%;background:#efe6d4;color:#8b5e3c;font-size:22px;line-height:1;cursor:pointer;z-index:2;}
+.zcp5-close:hover{background:#e3d5b8;}
+.zcp5-tbl{width:100%;border-collapse:collapse;font-family:"Noto Sans TC",sans-serif;font-size:13px;margin:.3em 0 1.2em;}
+.zcp5-tbl caption{font-family:"Noto Serif TC",serif;font-weight:700;color:#8b5e3c;font-size:14.5px;text-align:left;margin:.6em 0 .35em;line-height:1.5;}
+.zcp5-tbl th,.zcp5-tbl td{border:1px solid #d8c8ac;padding:.45em .6em;text-align:left;vertical-align:top;line-height:1.6;}
+.zcp5-tbl thead th{background:#8b5e3c;color:#f7ecd2;font-weight:700;}
+.zcp5-tbl td:first-child{white-space:nowrap;color:#8b5e3c;font-weight:700;background:#f0e8d8;}
+.zcp5-tbl tbody tr:nth-child(even) td{background:#f6efe0;}
+.zcp5-tbl b{color:#8b2500;}
+.zcp5-note{font-size:12px;color:#5a4e3a;line-height:1.9;background:#f6efe0;border-left:3px solid #c4956a;border-radius:0 6px 6px 0;padding:10px 13px;margin:4px 0 0;}
+.zcp5-note b{color:#8b2500;}
+@media(max-width:900px){.zcp5-fabbox{right:14px;}.zcp5-tbl{font-size:11.5px;}.zcp5-card{padding:26px 14px 16px;}}
+</style>
+<div class="zcp5-fabbox" id="zcp5Box"><button class="zcp5-btn" id="zcp5Btn" type="button" aria-label="開啟全景總表"><span class="zcp5-ic">▦</span><span class="zcp5-ls"><span class="zcp5-l1">本品 · 念息法門・思覺對治</span><span class="zcp5-l2">阿那般那六妙門 · 淘沙取金的三層過濾</span></span></button></div><div class="zcp5-modal" id="zcp5Modal" role="dialog" aria-modal="true" aria-label="全景總表"><div class="zcp5-card"><button class="zcp5-close" id="zcp5Close" type="button" aria-label="關閉">×</button><h3>卷上·第五品 治思覺法門 · 全景總表</h3><p class="sub">卷上·第五品｜思覺偏多習阿那般那三昧・數息工程與算數二元性・三種學人・六妙門完整架構・採金人喻粗細六覺</p><table class="zcp5-tbl"><caption>一、病理與方法論：為何獨選數息（本品主骨架）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>開門句</td><td>若思覺偏多，當習阿那般那三昧法門——散亂心無休止向外攀緣，需要最直接的生理錨點收攝</td></tr><tr><td>易見與難見</td><td>身心生滅無常相似相續難見；入息出息生滅無常易知易見——呼吸是心識剎那生滅中最粗顯、最易捕捉的一環</td></tr><tr><td>何以獨數息</td><td>餘觀法寬難失故，數息法急易轉故——如放牛牛難失守之少事，如放獼猴易失守之多事</td></tr><tr><td>治療兩階段</td><td>遮：以數息強制截斷向外攀緣的思緒；拔：進一步透過六妙門拔除思覺病根</td></tr></tbody></table><table class="zcp5-tbl"><caption>二、數息工程與六妙門全景（實修架構）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>數息絕對二元性</td><td>入息至竟數一，出息至竟數二；未竟而數為非數，數錯重來——如算人一一為二的嚴格算數規則</td></tr><tr><td>三種學人</td><td>初習行一心念數（入息出息若長若短，數一至十）→已習行數隨息俱、止心一處→久習行數隨止觀轉觀清淨</td></tr><tr><td>六妙門全景</td><td>數、隨、止、觀、轉觀、清淨——前三為定（借息收心），後三為慧（借止起觀），從生理錨點走向徹底解脫</td></tr><tr><td>採金人喻</td><td>先除麁石砂，再除細石砂，次第得細金砂——先除三種麁思覺，再除三種細思覺，除六覺已得一切清淨法</td></tr><tr><td>正觀對治</td><td>見多欲人求欲苦，得之守護是亦苦，失之憂惱亦大苦——以正觀之刀斬斷麁病根源</td></tr></tbody></table><table class="zcp5-tbl"><caption>三、粗細六覺的禪觀矩陣（診斷分層·中觀收攝）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>三種麁思覺</td><td>欲思覺、恚思覺、惱思覺——貪瞋惱三種較粗顯、易察覺的攀緣心念</td></tr><tr><td>三種細思覺</td><td>親里思覺、國土思覺、不死思覺——較隱微、需深層觀照方能察覺的攀緣心念</td></tr><tr><td>三層過濾機制</td><td>麁病先除、細病後除，如淘沙取金層層過濾，禪觀次第不可躐等</td></tr><tr><td>止觀並行</td><td>數與隨屬止（借息攝心），止與觀屬慧（透視五陰生滅）；轉觀捨風門住而知息無常，清淨則除滅五蓋煩惱</td></tr><tr><td>中觀收束</td><td>息本身如幻——出息從口鼻因緣引之而有，入息因緣心動令生，五大因緣合故生識，識亦非我有，如日愛珠因緣和合而生火</td></tr></tbody></table><p class="zcp5-note">治思覺法門選擇呼吸作為對治散亂心的錨點，正因呼吸生滅「易知易見」，能被意識輕易捕捉，遠比抽象的心識剎那生滅更適合初學。從嚴格的數息算法、三種學人的漸進次第，到數隨止觀轉觀清淨的六妙門全景，這是一條由生理錨點通向出世間慧觀的完整工法。而採金人喻淘沙取金的三層過濾——先除麁思覺、再除細思覺——最終在中觀視角下，連呼吸本身亦是因緣和合的虛誑假法，如日愛珠之喻，一切法無自性，非我有也。</p></div></div>
+<script id="wy-zcp5-js">(function(){
+var CH=document.querySelectorAll("section.chapter");
+var BTN=document.getElementById("zcp5Btn"),BOX=document.getElementById("zcp5Box"),MODAL=document.getElementById("zcp5Modal");
+if(!CH.length||!BTN||!BOX||!MODAL)return;
+var TARGET=4;
+function curIdx(){var lim=window.innerHeight*0.35,idx=-1;for(var i=0;i<CH.length;i++){if(CH[i].getBoundingClientRect().top<lim)idx=i;}return idx;}
+var FSEL="#floatVideo,.float-video,#vidFab,.vid-fab,#videoFab,#wyVideoBtn,#wyFab,#wy-fab,#vid-floating,#floatingYt,.video-fab,.wy-vbtn,.wy-video-fab,.floating-yt",_fab,_ft=false;
+function fab(){if(_fab&&_fab.isConnected)return _fab;if(_ft)return _fab;_ft=true;_fab=document.querySelector(FSEL);return _fab;}
+function place(){
+  var base=null,eb=document.querySelector(".wy-ebox");
+  if(eb){var r=eb.getBoundingClientRect();if(r.height>4)base=Math.round(window.innerHeight-r.top)+8;}
+  if(base===null){var fEl=fab();if(fEl){var fr=fEl.getBoundingClientRect(),st=getComputedStyle(fEl);if(fr.height>0&&st.display!=="none"&&st.visibility!=="hidden")base=Math.round(window.innerHeight-fr.top)+10;}}
+  if(base===null)base=78;
+  BOX.style.bottom=base+"px";
+}
+function upd(){place();BOX.classList.toggle("show",curIdx()===TARGET);}
+var tk=false;function onS(){if(!tk){tk=true;requestAnimationFrame(function(){tk=false;upd();});}}
+window.addEventListener("scroll",onS,{passive:true});window.addEventListener("resize",onS);
+BTN.addEventListener("click",function(){MODAL.classList.add("open");});
+MODAL.addEventListener("click",function(e){if(e.target===MODAL||e.target.id==="zcp5Close")MODAL.classList.remove("open");});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classList.remove("open");});
+upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
+})();</script>
+<!--WY-ZCP5:END-->
 </body>
 </html>
