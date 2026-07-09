@@ -1172,5 +1172,58 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classL
 upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
 })();</script>
 <!--WY-ZCP14:END-->
+<!--WY-ZCP15:BEGIN-->
+<style id="wy-zcp15-css">
+.zcp15-fabbox{position:fixed;right:22px;bottom:78px;z-index:121;display:none;}
+.zcp15-fabbox.show{display:block;}
+.zcp15-btn{display:inline-flex;align-items:center;gap:9px;font-family:"Noto Sans TC",sans-serif;letter-spacing:.5px;color:#f7ecd2;background:linear-gradient(135deg,#573f38,#2e2420);padding:8px 15px;border-radius:22px;border:1px solid rgba(184,134,11,.6);box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:pointer;opacity:.96;transition:opacity .3s,transform .2s,box-shadow .2s;}
+.zcp15-btn:hover{opacity:1;transform:translateY(-2px);box-shadow:0 6px 22px rgba(184,134,11,.5);}
+.zcp15-ic{font-size:15px;line-height:1;color:#ecc978;}
+.zcp15-ls{display:flex;flex-direction:column;align-items:flex-start;line-height:1.22;}
+.zcp15-l1{font-size:10.5px;font-weight:500;opacity:.82;white-space:nowrap;}
+.zcp15-l2{font-size:13px;font-weight:700;color:#faf1d8;white-space:nowrap;}
+.zcp15-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(28,20,12,.58);padding:16px;}
+.zcp15-modal.open{display:flex;}
+.zcp15-card{position:relative;background:#fbf7ee;max-width:900px;width:100%;max-height:88vh;overflow:auto;border:1px solid #d8c8ac;border-radius:14px;padding:30px 24px 22px;box-shadow:0 18px 50px rgba(0,0,0,.4);}
+.zcp15-card h3{margin:0 0 2px;font-family:"Noto Serif TC",serif;font-size:20px;color:#8b5e3c;}
+.zcp15-card .sub{margin:0 0 14px;font-family:"Noto Sans TC",sans-serif;font-size:13px;color:#6b5b4b;}
+.zcp15-close{position:absolute;top:12px;right:16px;width:34px;height:34px;border:none;border-radius:50%;background:#efe6d4;color:#8b5e3c;font-size:22px;line-height:1;cursor:pointer;z-index:2;}
+.zcp15-close:hover{background:#e3d5b8;}
+.zcp15-tbl{width:100%;border-collapse:collapse;font-family:"Noto Sans TC",sans-serif;font-size:13px;margin:.3em 0 1.2em;}
+.zcp15-tbl caption{font-family:"Noto Serif TC",serif;font-weight:700;color:#8b5e3c;font-size:14.5px;text-align:left;margin:.6em 0 .35em;line-height:1.5;}
+.zcp15-tbl th,.zcp15-tbl td{border:1px solid #d8c8ac;padding:.45em .6em;text-align:left;vertical-align:top;line-height:1.6;}
+.zcp15-tbl thead th{background:#8b5e3c;color:#f7ecd2;font-weight:700;}
+.zcp15-tbl td:first-child{white-space:nowrap;color:#8b5e3c;font-weight:700;background:#f0e8d8;}
+.zcp15-tbl tbody tr:nth-child(even) td{background:#f6efe0;}
+.zcp15-tbl b{color:#8b2500;}
+.zcp15-note{font-size:12px;color:#5a4e3a;line-height:1.9;background:#f6efe0;border-left:3px solid #c4956a;border-radius:0 6px 6px 0;padding:10px 13px;margin:4px 0 0;}
+.zcp15-note b{color:#8b2500;}
+@media(max-width:900px){.zcp15-fabbox{right:14px;}.zcp15-tbl{font-size:11.5px;}.zcp15-card{padding:26px 14px 16px;}}
+</style>
+<div class="zcp15-fabbox" id="zcp15Box"><button class="zcp15-btn" id="zcp15Btn" type="button" aria-label="開啟全景總表"><span class="zcp15-ic">▦</span><span class="zcp15-ls"><span class="zcp15-l1">本品 · 作四法緣品・無漏道階梯</span><span class="zcp15-l2">四諦十六行 · 煖頂忍世第一四加行</span></span></button></div><div class="zcp15-modal" id="zcp15Modal" role="dialog" aria-modal="true" aria-label="全景總表"><div class="zcp15-card"><button class="zcp15-close" id="zcp15Close" type="button" aria-label="關閉">×</button><h3>卷下·第四品 作四法緣品 · 全景總表</h3><p class="sub">卷下·第四品｜有漏無漏根本抉擇・觀緣如射博・四諦十六行・煖頂忍世第一四加行綜合診斷・見道十六心</p><table class="zcp15-tbl"><caption>一、道路的分歧與全局路線圖（本品主骨架）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>三維解析框架</td><td>中觀、心法、次第三個維度交織解析本品——既是禪修次第，也蘊含深刻的中觀義理</td></tr><tr><td>有漏無漏抉擇</td><td>道路的分歧點——同樣的禪定基礎，可導向有漏的世間果報，亦可導向無漏的出世間解脫，關鍵在觀慧的抉擇</td></tr><tr><td>全局路線圖</td><td>從凡夫到初果的認知升級階梯——四諦十六行→四加行（煖頂忍世第一）→見道十六心→沙門果位</td></tr><tr><td>觀緣如射博</td><td>心法比喻——如射箭博弈，觀緣需精準命中，不容絲毫散逸，凸顯此階段禪觀的高度精密性</td></tr></tbody></table><table class="zcp15-tbl"><caption>二、四諦十六行與四加行的診斷矩陣（實修階梯）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>四諦十六行</td><td>觀苦四種（診斷症狀）、觀習四種（追溯病因）、觀盡四種（康復狀態）、觀道四種（治療方案）——完整診斷治療模型</td></tr><tr><td>煖法</td><td>諸煩惱薪，無漏智火燒，火欲出初相，名為煖法——鑽木取火之初現煙象，尚未真正燃起智慧之火</td></tr><tr><td>頂法</td><td>信仰的極致與質變——三寶淨信合於實智，然頂法亦有「少信」之危機，如立於頂峰搖搖欲墜</td></tr><tr><td>忍法與世間第一法</td><td>忍法是不可動搖的認知錨定；世間第一法是凡夫境界的最高峰，即將突破無漏界邊</td></tr><tr><td>四加行綜合診斷矩陣</td><td>煖頂忍世第一四階漸次深化，各有其危機（如頂法退轉之代價，法句經偈頌警示）與突破關鍵</td></tr></tbody></table><table class="zcp15-tbl"><caption>三、閾值突破與見道十六心（勝義昇華）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>閾值突破</td><td>忍智雙運機制——忍法與智慧同步運作，方能真正突破世間第一法而入見道位</td></tr><tr><td>十六心認知序列</td><td>見道十六心依序生起，是整條無漏道路徑中最關鍵的認知升級序列，標誌凡夫至聖者的質變</td></tr><tr><td>退轉的代價</td><td>法句經偈頌以自然界警示喻少信退轉之危害——修行若中途動搖信念，前功盡棄</td></tr><tr><td>中觀底層</td><td>無漏智火燒盡煩惱薪的譬喻，呼應緣起性空——煩惱本無自性，只是因緣薪柴，智火一到，緣滅法空</td></tr><tr><td>全品收束</td><td>由四諦十六行的診斷治療模型，經四加行的漸次深化，終抵見道十六心與沙門果位——完整勾勒凡夫轉聖者的認知升級階梯</td></tr></tbody></table><p class="zcp15-note">作四法緣品鋪陳出一條從凡夫到初果最精密的認知升級階梯：四諦十六行建立起診斷症狀、追溯病因、康復狀態、治療方案的完整模型；煖頂忍世第一四加行則以「無漏智火燒諸煩惱薪」的鑽木取火意象，層層逼近無漏界的邊緣，其中頂法的「少信」危機更以法句經偈頌警示退轉之代價。最終在忍智雙運的機制下突破閾值，進入見道十六心的認知序列，完成凡夫轉向聖者的關鍵質變。全品所展現的「觀緣如射博」精密心法，正是無漏智火燒盡煩惱薪柴、緣起性空義理在實修次第上的具體印證。</p></div></div>
+<script id="wy-zcp15-js">(function(){
+var CH=document.querySelectorAll("section.chapter");
+var BTN=document.getElementById("zcp15Btn"),BOX=document.getElementById("zcp15Box"),MODAL=document.getElementById("zcp15Modal");
+if(!CH.length||!BTN||!BOX||!MODAL)return;
+var TARGET=14;
+function curIdx(){var lim=window.innerHeight*0.35,idx=-1;for(var i=0;i<CH.length;i++){if(CH[i].getBoundingClientRect().top<lim)idx=i;}return idx;}
+var FSEL="#floatVideo,.float-video,#vidFab,.vid-fab,#videoFab,#wyVideoBtn,#wyFab,#wy-fab,#vid-floating,#floatingYt,.video-fab,.wy-vbtn,.wy-video-fab,.floating-yt",_fab,_ft=false;
+function fab(){if(_fab&&_fab.isConnected)return _fab;if(_ft)return _fab;_ft=true;_fab=document.querySelector(FSEL);return _fab;}
+function place(){
+  var base=null,eb=document.querySelector(".wy-ebox");
+  if(eb){var r=eb.getBoundingClientRect();if(r.height>4)base=Math.round(window.innerHeight-r.top)+8;}
+  if(base===null){var fEl=fab();if(fEl){var fr=fEl.getBoundingClientRect(),st=getComputedStyle(fEl);if(fr.height>0&&st.display!=="none"&&st.visibility!=="hidden")base=Math.round(window.innerHeight-fr.top)+10;}}
+  if(base===null)base=78;
+  BOX.style.bottom=base+"px";
+}
+function upd(){place();BOX.classList.toggle("show",curIdx()===TARGET);}
+var tk=false;function onS(){if(!tk){tk=true;requestAnimationFrame(function(){tk=false;upd();});}}
+window.addEventListener("scroll",onS,{passive:true});window.addEventListener("resize",onS);
+BTN.addEventListener("click",function(){MODAL.classList.add("open");});
+MODAL.addEventListener("click",function(e){if(e.target===MODAL||e.target.id==="zcp15Close")MODAL.classList.remove("open");});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classList.remove("open");});
+upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
+})();</script>
+<!--WY-ZCP15:END-->
 </body>
 </html>
