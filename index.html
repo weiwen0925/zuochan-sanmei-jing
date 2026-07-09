@@ -1702,5 +1702,58 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classL
 upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
 })();</script>
 <!--WY-ZCP3:END-->
+<!--WY-ZCP4:BEGIN-->
+<style id="wy-zcp4-css">
+.zcp4-fabbox{position:fixed;right:22px;bottom:78px;z-index:121;display:none;}
+.zcp4-fabbox.show{display:block;}
+.zcp4-btn{display:inline-flex;align-items:center;gap:9px;font-family:"Noto Sans TC",sans-serif;letter-spacing:.5px;color:#f7ecd2;background:linear-gradient(135deg,#573f38,#2e2420);padding:8px 15px;border-radius:22px;border:1px solid rgba(184,134,11,.6);box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:pointer;opacity:.96;transition:opacity .3s,transform .2s,box-shadow .2s;}
+.zcp4-btn:hover{opacity:1;transform:translateY(-2px);box-shadow:0 6px 22px rgba(184,134,11,.5);}
+.zcp4-ic{font-size:15px;line-height:1;color:#ecc978;}
+.zcp4-ls{display:flex;flex-direction:column;align-items:flex-start;line-height:1.22;}
+.zcp4-l1{font-size:10.5px;font-weight:500;opacity:.82;white-space:nowrap;}
+.zcp4-l2{font-size:13px;font-weight:700;color:#faf1d8;white-space:nowrap;}
+.zcp4-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(28,20,12,.58);padding:16px;}
+.zcp4-modal.open{display:flex;}
+.zcp4-card{position:relative;background:#fbf7ee;max-width:900px;width:100%;max-height:88vh;overflow:auto;border:1px solid #d8c8ac;border-radius:14px;padding:30px 24px 22px;box-shadow:0 18px 50px rgba(0,0,0,.4);}
+.zcp4-card h3{margin:0 0 2px;font-family:"Noto Serif TC",serif;font-size:20px;color:#8b5e3c;}
+.zcp4-card .sub{margin:0 0 14px;font-family:"Noto Sans TC",sans-serif;font-size:13px;color:#6b5b4b;}
+.zcp4-close{position:absolute;top:12px;right:16px;width:34px;height:34px;border:none;border-radius:50%;background:#efe6d4;color:#8b5e3c;font-size:22px;line-height:1;cursor:pointer;z-index:2;}
+.zcp4-close:hover{background:#e3d5b8;}
+.zcp4-tbl{width:100%;border-collapse:collapse;font-family:"Noto Sans TC",sans-serif;font-size:13px;margin:.3em 0 1.2em;}
+.zcp4-tbl caption{font-family:"Noto Serif TC",serif;font-weight:700;color:#8b5e3c;font-size:14.5px;text-align:left;margin:.6em 0 .35em;line-height:1.5;}
+.zcp4-tbl th,.zcp4-tbl td{border:1px solid #d8c8ac;padding:.45em .6em;text-align:left;vertical-align:top;line-height:1.6;}
+.zcp4-tbl thead th{background:#8b5e3c;color:#f7ecd2;font-weight:700;}
+.zcp4-tbl td:first-child{white-space:nowrap;color:#8b5e3c;font-weight:700;background:#f0e8d8;}
+.zcp4-tbl tbody tr:nth-child(even) td{background:#f6efe0;}
+.zcp4-tbl b{color:#8b2500;}
+.zcp4-note{font-size:12px;color:#5a4e3a;line-height:1.9;background:#f6efe0;border-left:3px solid #c4956a;border-radius:0 6px 6px 0;padding:10px 13px;margin:4px 0 0;}
+.zcp4-note b{color:#8b2500;}
+@media(max-width:900px){.zcp4-fabbox{right:14px;}.zcp4-tbl{font-size:11.5px;}.zcp4-card{padding:26px 14px 16px;}}
+</style>
+<div class="zcp4-fabbox" id="zcp4Box"><button class="zcp4-btn" id="zcp4Btn" type="button" aria-label="開啟全景總表"><span class="zcp4-ic">▦</span><span class="zcp4-ls"><span class="zcp4-l1">本品 · 因緣觀・愚癡對治</span><span class="zcp4-l2">十二因緣三階手術 · 邪見癡人的邏輯解構</span></span></button></div><div class="zcp4-modal" id="zcp4Modal" role="dialog" aria-modal="true" aria-label="全景總表"><div class="zcp4-card"><button class="zcp4-close" id="zcp4Close" type="button" aria-label="關閉">×</button><h3>卷上·第四品 第三治愚癡法門 · 全景總表</h3><p class="sub">卷上·第四品｜無明主動扭曲・鈍根與邪見二種癡人・十二因緣三階觀法・止觀並行・緣起性空二諦</p><table class="zcp4-tbl"><caption>一、病理與診斷：無明的本質與精準標靶（本品主骨架）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>無明本質</td><td>非缺乏知識，而是主動運作的認知扭曲機器——有者無、無者有，棄諸善、取諸惡，破實相、著虛妄</td></tr><tr><td>四顛倒</td><td>無常苦無我不淨的五陰，經認知透鏡強行投射為常樂我淨，屏蔽對苦集滅道四諦的感知</td></tr><tr><td>自體繁殖系統</td><td>鑽木取火迴圈——摩擦（煩惱）→燃料（業集）→燃燒（苦流迴），無明會自動補充燃料</td></tr><tr><td>二種癡人</td><td>鈍根癡人如牛羊（適合不淨觀慈心觀）；邪見癡人執常斷神我（本法門精準標的）——以毒攻毒</td></tr><tr><td>三習行結構</td><td>初習行抓頭尾（生緣老死、無明緣行）→已習行透視中段八支→久習行全景串聯十二支</td></tr></tbody></table><table class="zcp4-tbl"><caption>二、十二因緣三階手術與止觀樞紐（實修操作）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>十二支鏈條</td><td>無明→行→識→名色→六入→觸→受→愛→取→有→生→老死，構成閉環因果鏈</td></tr><tr><td>初習行</td><td>局部定錨——只觀無明緣行（因端）與生緣老死（果端），降低認知負荷</td></tr><tr><td>已習行</td><td>透視行識名色六入觸受愛取有——「觸→受→愛→取」是日常煩惱起伏的微觀模型，最佳下手處</td></tr><tr><td>久習行</td><td>全景串聯十二支，徹底瓦解「獨立自我」的幻覺——自我僅是相續生滅的視覺殘影</td></tr><tr><td>止觀並行</td><td>「如是思惟，不令外念；外念諸緣，攝之令還」——若無攝心，因緣觀將退化為邪見癡人的胡思亂想</td></tr><tr><td>截斷眾流</td><td>不必從無明斷起，只需在愛、取當下踩煞車——滅一環，全鏈自然鬆動</td></tr></tbody></table><table class="zcp4-tbl"><caption>三、緣起性空與二諦交融（中觀底層邏輯·勝義昇華）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>以緣起破邪見</td><td>萬法皆因緣條件流轉，無獨立不變的我——十二因緣法展示A導致B、B導致C的條件反射，我在邏輯上自動瓦解</td></tr><tr><td>以性空觀無明</td><td>無明無實體，僅是光明缺席的影子——不需消滅黑暗，只需停止提供薪柴，緣滅智出如日出</td></tr><tr><td>二諦交融</td><td>世俗諦誠懇一支一支推演（因緣觀方便施設）；勝義諦通達十二因緣本身亦是無自性的施設——不立一法</td></tr><tr><td>三毒對治矩陣</td><td>貪欲執淨→不淨觀·拆解緣起→證色空；瞋恚執我他→慈心觀·轉換緣起→證無我；愚癡執常樂我淨→因緣觀·透視緣起→證智明</td></tr><tr><td>全品總綱</td><td>繫念緣起，智明破闇——最高階禪修非強制停止思想，而是運用緣起利刃，從底層瓦解錯覺認知的代碼</td></tr></tbody></table><p class="zcp4-note">治愚癡法門把佛法最深奧的十二因緣邏輯鏈，精準投給「思考過度、方向錯誤」的邪見癡人——不是知識的欠缺，而是主動扭曲的認知系統，唯有以更嚴密的緣起結構才能使其自行發現舊立場的矛盾。三階手術由頭尾到中段、再到全景串聯，皆建立在止觀並行的樞紐之上；而其終極的解脫機轉，正是《中論》「以緣起破邪見、以性空觀無明、以二諦交融」的統一邏輯——十二因緣既被用來拆解自我的幻覺，最終也連自身作為方便施設的實在性一併被勘破，智明如日出，不求自現。</p></div></div>
+<script id="wy-zcp4-js">(function(){
+var CH=document.querySelectorAll("section.chapter");
+var BTN=document.getElementById("zcp4Btn"),BOX=document.getElementById("zcp4Box"),MODAL=document.getElementById("zcp4Modal");
+if(!CH.length||!BTN||!BOX||!MODAL)return;
+var TARGET=3;
+function curIdx(){var lim=window.innerHeight*0.35,idx=-1;for(var i=0;i<CH.length;i++){if(CH[i].getBoundingClientRect().top<lim)idx=i;}return idx;}
+var FSEL="#floatVideo,.float-video,#vidFab,.vid-fab,#videoFab,#wyVideoBtn,#wyFab,#wy-fab,#vid-floating,#floatingYt,.video-fab,.wy-vbtn,.wy-video-fab,.floating-yt",_fab,_ft=false;
+function fab(){if(_fab&&_fab.isConnected)return _fab;if(_ft)return _fab;_ft=true;_fab=document.querySelector(FSEL);return _fab;}
+function place(){
+  var base=null,eb=document.querySelector(".wy-ebox");
+  if(eb){var r=eb.getBoundingClientRect();if(r.height>4)base=Math.round(window.innerHeight-r.top)+8;}
+  if(base===null){var fEl=fab();if(fEl){var fr=fEl.getBoundingClientRect(),st=getComputedStyle(fEl);if(fr.height>0&&st.display!=="none"&&st.visibility!=="hidden")base=Math.round(window.innerHeight-fr.top)+10;}}
+  if(base===null)base=78;
+  BOX.style.bottom=base+"px";
+}
+function upd(){place();BOX.classList.toggle("show",curIdx()===TARGET);}
+var tk=false;function onS(){if(!tk){tk=true;requestAnimationFrame(function(){tk=false;upd();});}}
+window.addEventListener("scroll",onS,{passive:true});window.addEventListener("resize",onS);
+BTN.addEventListener("click",function(){MODAL.classList.add("open");});
+MODAL.addEventListener("click",function(e){if(e.target===MODAL||e.target.id==="zcp4Close")MODAL.classList.remove("open");});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classList.remove("open");});
+upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
+})();</script>
+<!--WY-ZCP4:END-->
 </body>
 </html>
