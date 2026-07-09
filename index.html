@@ -1543,5 +1543,58 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classL
 upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
 })();</script>
 <!--WY-ZCP20:END-->
+<!--WY-ZCP21:BEGIN-->
+<style id="wy-zcp21-css">
+.zcp21-fabbox{position:fixed;right:22px;bottom:78px;z-index:121;display:none;}
+.zcp21-fabbox.show{display:block;}
+.zcp21-btn{display:inline-flex;align-items:center;gap:9px;font-family:"Noto Sans TC",sans-serif;letter-spacing:.5px;color:#f7ecd2;background:linear-gradient(135deg,#573f38,#2e2420);padding:8px 15px;border-radius:22px;border:1px solid rgba(184,134,11,.6);box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:pointer;opacity:.96;transition:opacity .3s,transform .2s,box-shadow .2s;}
+.zcp21-btn:hover{opacity:1;transform:translateY(-2px);box-shadow:0 6px 22px rgba(184,134,11,.5);}
+.zcp21-ic{font-size:15px;line-height:1;color:#ecc978;}
+.zcp21-ls{display:flex;flex-direction:column;align-items:flex-start;line-height:1.22;}
+.zcp21-l1{font-size:10.5px;font-weight:500;opacity:.82;white-space:nowrap;}
+.zcp21-l2{font-size:13px;font-weight:700;color:#faf1d8;white-space:nowrap;}
+.zcp21-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(28,20,12,.58);padding:16px;}
+.zcp21-modal.open{display:flex;}
+.zcp21-card{position:relative;background:#fbf7ee;max-width:900px;width:100%;max-height:88vh;overflow:auto;border:1px solid #d8c8ac;border-radius:14px;padding:30px 24px 22px;box-shadow:0 18px 50px rgba(0,0,0,.4);}
+.zcp21-card h3{margin:0 0 2px;font-family:"Noto Serif TC",serif;font-size:20px;color:#8b5e3c;}
+.zcp21-card .sub{margin:0 0 14px;font-family:"Noto Sans TC",sans-serif;font-size:13px;color:#6b5b4b;}
+.zcp21-close{position:absolute;top:12px;right:16px;width:34px;height:34px;border:none;border-radius:50%;background:#efe6d4;color:#8b5e3c;font-size:22px;line-height:1;cursor:pointer;z-index:2;}
+.zcp21-close:hover{background:#e3d5b8;}
+.zcp21-tbl{width:100%;border-collapse:collapse;font-family:"Noto Sans TC",sans-serif;font-size:13px;margin:.3em 0 1.2em;}
+.zcp21-tbl caption{font-family:"Noto Serif TC",serif;font-weight:700;color:#8b5e3c;font-size:14.5px;text-align:left;margin:.6em 0 .35em;line-height:1.5;}
+.zcp21-tbl th,.zcp21-tbl td{border:1px solid #d8c8ac;padding:.45em .6em;text-align:left;vertical-align:top;line-height:1.6;}
+.zcp21-tbl thead th{background:#8b5e3c;color:#f7ecd2;font-weight:700;}
+.zcp21-tbl td:first-child{white-space:nowrap;color:#8b5e3c;font-weight:700;background:#f0e8d8;}
+.zcp21-tbl tbody tr:nth-child(even) td{background:#f6efe0;}
+.zcp21-tbl b{color:#8b2500;}
+.zcp21-note{font-size:12px;color:#5a4e3a;line-height:1.9;background:#f6efe0;border-left:3px solid #c4956a;border-radius:0 6px 6px 0;padding:10px 13px;margin:4px 0 0;}
+.zcp21-note b{color:#8b2500;}
+@media(max-width:900px){.zcp21-fabbox{right:14px;}.zcp21-tbl{font-size:11.5px;}.zcp21-card{padding:26px 14px 16px;}}
+</style>
+<div class="zcp21-fabbox" id="zcp21Box"><button class="zcp21-btn" id="zcp21Btn" type="button" aria-label="開啟全景總表"><span class="zcp21-ic">▦</span><span class="zcp21-ls"><span class="zcp21-l1">本品 · 無常等觀名為正見・解構與重塑</span><span class="zcp21-l2">藥病俱遣不滯言聲 · 指月之喻真俗二諦</span></span></button></div><div class="zcp21-modal" id="zcp21Modal" role="dialog" aria-modal="true" aria-label="全景總表"><div class="zcp21-card"><button class="zcp21-close" id="zcp21Close" type="button" aria-label="關閉">×</button><h3>卷下·第十品 無常等觀名為正見 · 全景總表</h3><p class="sub">卷下·第十品｜提問者核心質疑・深觀解構三階遞進・毒藥解藥模型・四諦收攝八正道・菩薩不取證深入十二因緣</p><table class="zcp21-tbl"><caption>一、提問者的核心質疑與深觀解構三階（本品主骨架）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>核心質疑</td><td>提問者質疑——若一切法無常，何以「無常」本身可被立為「正見」？是否自相矛盾？</td></tr><tr><td>深觀解構三階</td><td>經文以三階遞進回應此質疑——由淺入深，層層化解「無常為正見」表面的邏輯矛盾</td></tr><tr><td>全息記憶矩陣</td><td>一表掌握三層深觀——將三階解構濃縮為易於記誦的矩陣結構，便於讀者整體把握</td></tr><tr><td>第一問答</td><td>不生不滅 vs 無常為正見——釐清「無常」作為對治工具與究竟「不生不滅」實相之間的層次差異</td></tr></tbody></table><table class="zcp21-tbl"><caption>二、毒藥解藥模型與四諦收攝（辯證與展開）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>提問者盲點</td><td>二元對立的誤認——提問者誤以為「無常」與「常」是對等的兩個實有立場，未見「無常」僅是對治工具</td></tr><tr><td>無常對治功能</td><td>破除常顛倒——無常觀之所以被立為正見，正因其功能在於破除凡夫對「常」的顛倒執著</td></tr><tr><td>毒藥與解藥模型</td><td>工具的階段性與自我抵銷——無常如解藥，用以對治常顛倒之毒，藥病兩不可執，用畢當捨</td></tr><tr><td>破斥虛無主義</td><td>第二問答回應「俱不實」的虛無主義陷阱——破除常見的同時，不可墮入「一切皆無」的另一極端</td></tr><tr><td>指月之喻</td><td>言音非實相，但假言表實理——語言文字如指月之指，非月本身，然可藉指見月，不可廢言亦不可執言</td></tr><tr><td>道諦展開</td><td>八正道、根、力、覺意——道諦的具體修證內容，構成通往解脫的實踐路徑</td></tr></tbody></table><table class="zcp21-tbl"><caption>三、四緣推求與菩薩不取證（勝義昇華）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>完美映射中論二諦</td><td>無常觀的階段性工具義（世俗諦）與不生不滅的究竟實相義（勝義諦）完美映射《中論》真俗二諦框架</td></tr><tr><td>階段一核心心法</td><td>藥病俱遣，不滯言聲——不僅要捨棄「常」之病，連「無常」之藥、乃至能詮之言語本身，亦不應滯著</td></tr><tr><td>為何獨尊苦諦</td><td>四諦之中特別彰顯苦諦——實用主義的診斷學，先確立病灶（苦），才能對症下藥（集滅道）</td></tr><tr><td>菩薩不取證</td><td>菩薩雖能通達無常等觀而入見道，卻不急於取證涅槃，反而深入十二因緣，以四緣推求兩頭俱斷，續留生死度化眾生</td></tr><tr><td>四緣推求兩頭俱斷</td><td>從因緣的角度推求十二因緣之起滅兩端，皆不可得，展現菩薩甚深般若與廣大悲願的統一</td></tr><tr><td>全品收束</td><td>由無常正見的表面矛盾出發，經毒藥解藥模型、指月之喻的言詮辯證，終至菩薩不取證、深入十二因緣的大乘不共義理</td></tr></tbody></table><p class="zcp21-note">無常等觀名為正見一品，精妙化解「無常」作為對治工具與「不生不滅」究竟實相之間看似矛盾的張力：無常觀如解藥，用以破除凡夫對常的顛倒執著，然藥病兩不可執，用畢當捨，正如指月之喻——言音非實相，但假言可表實理，不可廢言亦不可執言。這完美映射《中論》真俗二諦的框架：世俗諦上無常觀是必要的對治工具，勝義諦上則連無常本身亦是方便施設。而本品最深刻處在於菩薩雖能通達無常等觀而入見道，卻選擇不取證涅槃，反而深入十二因緣、以四緣推求兩頭俱斷，續留生死廣度眾生——這正是大乘般若與悲願統一的不共義理。</p></div></div>
+<script id="wy-zcp21-js">(function(){
+var CH=document.querySelectorAll("section.chapter");
+var BTN=document.getElementById("zcp21Btn"),BOX=document.getElementById("zcp21Box"),MODAL=document.getElementById("zcp21Modal");
+if(!CH.length||!BTN||!BOX||!MODAL)return;
+var TARGET=20;
+function curIdx(){var lim=window.innerHeight*0.35,idx=-1;for(var i=0;i<CH.length;i++){if(CH[i].getBoundingClientRect().top<lim)idx=i;}return idx;}
+var FSEL="#floatVideo,.float-video,#vidFab,.vid-fab,#videoFab,#wyVideoBtn,#wyFab,#wy-fab,#vid-floating,#floatingYt,.video-fab,.wy-vbtn,.wy-video-fab,.floating-yt",_fab,_ft=false;
+function fab(){if(_fab&&_fab.isConnected)return _fab;if(_ft)return _fab;_ft=true;_fab=document.querySelector(FSEL);return _fab;}
+function place(){
+  var base=null,eb=document.querySelector(".wy-ebox");
+  if(eb){var r=eb.getBoundingClientRect();if(r.height>4)base=Math.round(window.innerHeight-r.top)+8;}
+  if(base===null){var fEl=fab();if(fEl){var fr=fEl.getBoundingClientRect(),st=getComputedStyle(fEl);if(fr.height>0&&st.display!=="none"&&st.visibility!=="hidden")base=Math.round(window.innerHeight-fr.top)+10;}}
+  if(base===null)base=78;
+  BOX.style.bottom=base+"px";
+}
+function upd(){place();BOX.classList.toggle("show",curIdx()===TARGET);}
+var tk=false;function onS(){if(!tk){tk=true;requestAnimationFrame(function(){tk=false;upd();});}}
+window.addEventListener("scroll",onS,{passive:true});window.addEventListener("resize",onS);
+BTN.addEventListener("click",function(){MODAL.classList.add("open");});
+MODAL.addEventListener("click",function(e){if(e.target===MODAL||e.target.id==="zcp21Close")MODAL.classList.remove("open");});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classList.remove("open");});
+upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
+})();</script>
+<!--WY-ZCP21:END-->
 </body>
 </html>
