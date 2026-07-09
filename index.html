@@ -1649,5 +1649,58 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classL
 upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
 })();</script>
 <!--WY-ZCP22:END-->
+<!--WY-ZCP3:BEGIN-->
+<style id="wy-zcp3-css">
+.zcp3-fabbox{position:fixed;right:22px;bottom:78px;z-index:121;display:none;}
+.zcp3-fabbox.show{display:block;}
+.zcp3-btn{display:inline-flex;align-items:center;gap:9px;font-family:"Noto Sans TC",sans-serif;letter-spacing:.5px;color:#f7ecd2;background:linear-gradient(135deg,#573f38,#2e2420);padding:8px 15px;border-radius:22px;border:1px solid rgba(184,134,11,.6);box-shadow:0 4px 16px rgba(0,0,0,.3);cursor:pointer;opacity:.96;transition:opacity .3s,transform .2s,box-shadow .2s;}
+.zcp3-btn:hover{opacity:1;transform:translateY(-2px);box-shadow:0 6px 22px rgba(184,134,11,.5);}
+.zcp3-ic{font-size:15px;line-height:1;color:#ecc978;}
+.zcp3-ls{display:flex;flex-direction:column;align-items:flex-start;line-height:1.22;}
+.zcp3-l1{font-size:10.5px;font-weight:500;opacity:.82;white-space:nowrap;}
+.zcp3-l2{font-size:13px;font-weight:700;color:#faf1d8;white-space:nowrap;}
+.zcp3-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;background:rgba(28,20,12,.58);padding:16px;}
+.zcp3-modal.open{display:flex;}
+.zcp3-card{position:relative;background:#fbf7ee;max-width:900px;width:100%;max-height:88vh;overflow:auto;border:1px solid #d8c8ac;border-radius:14px;padding:30px 24px 22px;box-shadow:0 18px 50px rgba(0,0,0,.4);}
+.zcp3-card h3{margin:0 0 2px;font-family:"Noto Serif TC",serif;font-size:20px;color:#8b5e3c;}
+.zcp3-card .sub{margin:0 0 14px;font-family:"Noto Sans TC",sans-serif;font-size:13px;color:#6b5b4b;}
+.zcp3-close{position:absolute;top:12px;right:16px;width:34px;height:34px;border:none;border-radius:50%;background:#efe6d4;color:#8b5e3c;font-size:22px;line-height:1;cursor:pointer;z-index:2;}
+.zcp3-close:hover{background:#e3d5b8;}
+.zcp3-tbl{width:100%;border-collapse:collapse;font-family:"Noto Sans TC",sans-serif;font-size:13px;margin:.3em 0 1.2em;}
+.zcp3-tbl caption{font-family:"Noto Serif TC",serif;font-weight:700;color:#8b5e3c;font-size:14.5px;text-align:left;margin:.6em 0 .35em;line-height:1.5;}
+.zcp3-tbl th,.zcp3-tbl td{border:1px solid #d8c8ac;padding:.45em .6em;text-align:left;vertical-align:top;line-height:1.6;}
+.zcp3-tbl thead th{background:#8b5e3c;color:#f7ecd2;font-weight:700;}
+.zcp3-tbl td:first-child{white-space:nowrap;color:#8b5e3c;font-weight:700;background:#f0e8d8;}
+.zcp3-tbl tbody tr:nth-child(even) td{background:#f6efe0;}
+.zcp3-tbl b{color:#8b2500;}
+.zcp3-note{font-size:12px;color:#5a4e3a;line-height:1.9;background:#f6efe0;border-left:3px solid #c4956a;border-radius:0 6px 6px 0;padding:10px 13px;margin:4px 0 0;}
+.zcp3-note b{color:#8b2500;}
+@media(max-width:900px){.zcp3-fabbox{right:14px;}.zcp3-tbl{font-size:11.5px;}.zcp3-card{padding:26px 14px 16px;}}
+</style>
+<div class="zcp3-fabbox" id="zcp3Box"><button class="zcp3-btn" id="zcp3Btn" type="button" aria-label="開啟全景總表"><span class="zcp3-ic">▦</span><span class="zcp3-ls"><span class="zcp3-l1">本品 · 慈心三昧・瞋恚對治</span><span class="zcp3-l2">同心圓脫敏 · 四重邏輯過濾 · 著忍革屣</span></span></button></div><div class="zcp3-modal" id="zcp3Modal" role="dialog" aria-modal="true" aria-label="全景總表"><div class="zcp3-card"><button class="zcp3-close" id="zcp3Close" type="button" aria-label="關閉">×</button><h3>卷上·第三品 治瞋恚法門 · 全景總表</h3><p class="sub">卷上·第三品｜瞋為遮蔽實相之無明大瞑・親中怨同心圓脫敏・四重認知重辯・著忍革屣繫心轉境・中觀二諦</p><table class="zcp3-tbl"><caption>一、瞋毒命題與四層研究架構（本品主骨架）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>瞋毒診斷</td><td>自害乃滅（雖欲燒他實是自害）＋染污淨心（瞋為塵垢）＋有目無覩（瞋為大瞑）——瞋是遮蔽實相的無明大瞑</td></tr><tr><td>四層遞進</td><td>臨床心理學（實修次第）→認知行為學（認知重辯）→存在主義（核心心法）→哲學本體論（中觀綜合）</td></tr><tr><td>經文原典</td><td>三慈心法門（親愛→中人→怨憎）＋論主設問作答＋佛說偈頌「以瞋報瞋，瞋還著之」三段完整結構</td></tr><tr><td>核心口訣</td><td>「繫心在慈，不令異念；異念諸緣，攝之令還」——貫穿三階次第的同一心法</td></tr></tbody></table><table class="zcp3-tbl"><caption>二、同心圓脫敏與四重邏輯過濾（實修＋認知重構）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>初習行·親愛</td><td>願親愛得種種身心快樂——由具象世俗需求建立穩固專注力基底</td></tr><tr><td>已習行·中人</td><td>私愛執著轉為客觀善意——檢驗慈心是否已剝離生物性依附</td></tr><tr><td>久習行·怨憎</td><td>得與親同、同得一心——大腦對敵我邊界的徹底重構，親中怨等無分別</td></tr><tr><td>空間維度</td><td>局部不代表整體——其人更有種種清淨法因，不可以一怨故沒其善</td></tr><tr><td>時間・功用・自他維度</td><td>過去或為親善（時間拉伸）＋生忍由怨（逆增上緣）＋雖欲燒他實是自害（損益分析）</td></tr><tr><td>著忍革屣心法</td><td>改變世界不如改變自己——如刺刺身不可盡除，唯自守護著忍革屣</td></tr></tbody></table><table class="zcp3-tbl"><caption>三、中觀統攝與證入慈心三昧（勝義昇華）</caption><thead><tr><th>環節</th><th>內容</th></tr></thead><tbody><tr><td>緣起框架</td><td>怨親皆是緣起——過去世或為親善，無自性故不應執恆常之恨</td></tr><tr><td>性空框架</td><td>五受陰者眾苦林藪，我與他皆性空——沒有實體可被傷害，也沒有實體去傷害，瞋火釜底抽薪</td></tr><tr><td>二諦框架</td><td>世俗諦設親中怨階梯以對治假名；勝義諦得與親同、親中怨等——俗諦分三步，真諦等一心</td></tr><tr><td>證入三昧</td><td>廣及世界、無量眾生、皆令得樂，見十方眾生皆如自見——定力與慈力完美融合，全知全悲</td></tr><tr><td>心靈煉金術四階</td><td>瞋恚毒蛇→著忍革屣→二諦觀照→慈心三昧——從毒蛇淬鍊出純金</td></tr></tbody></table><p class="zcp3-note">治瞋恚法門展現一套極度精密的雙軌認知工程：臨床心理學上以親—中—怨同心圓次第完成系統性脫敏，認知行為學上以空間、時間、功用、自他四重邏輯徹底摧毀仇恨的合法性。而其底層依據，正是《中論》緣起、性空、二諦三大框架——怨敵無自性、五陰本性空、親中怨終歸平等一心。從瞋恚毒蛇到著忍革屣，從二諦觀照到廣及無量眾生的慈心三昧，這是一場從情緒反應到理性悲憫、再到平等實相的完整心靈煉金術。</p></div></div>
+<script id="wy-zcp3-js">(function(){
+var CH=document.querySelectorAll("section.chapter");
+var BTN=document.getElementById("zcp3Btn"),BOX=document.getElementById("zcp3Box"),MODAL=document.getElementById("zcp3Modal");
+if(!CH.length||!BTN||!BOX||!MODAL)return;
+var TARGET=2;
+function curIdx(){var lim=window.innerHeight*0.35,idx=-1;for(var i=0;i<CH.length;i++){if(CH[i].getBoundingClientRect().top<lim)idx=i;}return idx;}
+var FSEL="#floatVideo,.float-video,#vidFab,.vid-fab,#videoFab,#wyVideoBtn,#wyFab,#wy-fab,#vid-floating,#floatingYt,.video-fab,.wy-vbtn,.wy-video-fab,.floating-yt",_fab,_ft=false;
+function fab(){if(_fab&&_fab.isConnected)return _fab;if(_ft)return _fab;_ft=true;_fab=document.querySelector(FSEL);return _fab;}
+function place(){
+  var base=null,eb=document.querySelector(".wy-ebox");
+  if(eb){var r=eb.getBoundingClientRect();if(r.height>4)base=Math.round(window.innerHeight-r.top)+8;}
+  if(base===null){var fEl=fab();if(fEl){var fr=fEl.getBoundingClientRect(),st=getComputedStyle(fEl);if(fr.height>0&&st.display!=="none"&&st.visibility!=="hidden")base=Math.round(window.innerHeight-fr.top)+10;}}
+  if(base===null)base=78;
+  BOX.style.bottom=base+"px";
+}
+function upd(){place();BOX.classList.toggle("show",curIdx()===TARGET);}
+var tk=false;function onS(){if(!tk){tk=true;requestAnimationFrame(function(){tk=false;upd();});}}
+window.addEventListener("scroll",onS,{passive:true});window.addEventListener("resize",onS);
+BTN.addEventListener("click",function(){MODAL.classList.add("open");});
+MODAL.addEventListener("click",function(e){if(e.target===MODAL||e.target.id==="zcp3Close")MODAL.classList.remove("open");});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")MODAL.classList.remove("open");});
+upd();var c=0,iv=setInterval(function(){upd();if(++c>40)clearInterval(iv);},250);
+})();</script>
+<!--WY-ZCP3:END-->
 </body>
 </html>
