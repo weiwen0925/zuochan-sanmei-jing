@@ -3091,7 +3091,7 @@ function boot(){
  });
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot);else boot();
-}catch(e){}})();</script><!--/WY-BLQ--><!--WY-MARK--><style id="wy-mark-css" data-v="3.2">
+}catch(e){}})();</script><!--/WY-BLQ--><!--WY-MARK--><style id="wy-mark-css" data-v="3.3">
 #wyMkBar{position:fixed;right:22px;bottom:82px;z-index:8990;display:flex;align-items:stretch;
  background:rgba(42,34,24,.95);border:1.2px solid #b8860b;border-radius:999px;overflow:hidden;
  box-shadow:0 4px 14px rgba(0,0,0,.28);font-family:'Noto Sans TC',sans-serif;
@@ -3497,16 +3497,23 @@ function jump(vv){
  if(!el){say("這一處已不在頁面上");return;}
  if(hidden(el)&&switchView(el)){setTimeout(function(){jump(v);},320);return;}
  if(hidden(el)){say("這一段目前沒顯示——在另一個檢視或闖關模式下，切換後再續讀");return;}
- var tries=0,stable=0,quit=false;
+ var tries=0,stable=0,quit=false,lastSet=null;
  function bail(){quit=true;}
- window.addEventListener("wheel",bail,{once:true,passive:true});
- window.addEventListener("touchstart",bail,{once:true,passive:true});
+ /* 讀者一動手就讓位。正文多半在 iframe 內頁裡，滾輪事件不會冒泡到外層，所以三管齊下：
+    ①外層 wheel／touch／鍵盤 ②每個 iframe 內頁的 wheel／touch／鍵盤 ③自己沒動卻發現捲動位置變了 */
+ var wins=[window],fr=document.querySelectorAll("iframe"),i;
+ for(i=0;i<fr.length;i++){try{if(fr[i].contentWindow&&fr[i].contentDocument)wins.push(fr[i].contentWindow);}catch(e){}}
+ var EV=["wheel","touchstart","keydown","mousedown"];
+ function bind(on){var w,k;for(w=0;w<wins.length;w++){for(k=0;k<EV.length;k++){try{
+   if(on)wins[w].addEventListener(EV[k],bail,{passive:true});else wins[w].removeEventListener(EV[k],bail);}catch(e){}}}}
+ bind(true);
  (function step(){
-  if(quit){paint();return;}
+  if(!quit&&lastSet!==null&&Math.abs(sy()-lastSet)>3)quit=true;   /* 不是我們捲的 → 讀者在動 */
+  if(quit){bind(false);paint();return;}
   var y=Math.max(0,topOf(el)+(v.dy||0));
-  if(Math.abs(sy()-y)>3){window.scrollTo(0,y);stable=0;}else{stable++;}
+  if(Math.abs(sy()-y)>3){window.scrollTo(0,y);lastSet=sy();stable=0;}else{lastSet=sy();stable++;}
   if(++tries<130&&stable<12){setTimeout(step,120);}
-  else{window.removeEventListener("wheel",bail);window.removeEventListener("touchstart",bail);paint();}
+  else{bind(false);paint();}
  })();
 }
 mk.addEventListener("click",function(e){e.preventDefault();e.stopPropagation();save();});
