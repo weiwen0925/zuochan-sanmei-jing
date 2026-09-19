@@ -3091,7 +3091,7 @@ function boot(){
  });
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot);else boot();
-}catch(e){}})();</script><!--/WY-BLQ--><!--WY-MARK--><style id="wy-mark-css" data-v="3.1">
+}catch(e){}})();</script><!--/WY-BLQ--><!--WY-MARK--><style id="wy-mark-css" data-v="3.2">
 #wyMkBar{position:fixed;right:22px;bottom:82px;z-index:8990;display:flex;align-items:stretch;
  background:rgba(42,34,24,.95);border:1.2px solid #b8860b;border-radius:999px;overflow:hidden;
  box-shadow:0 4px 14px rgba(0,0,0,.28);font-family:'Noto Sans TC',sans-serif;
@@ -3584,7 +3584,7 @@ function readIdx(){
  if(dirty){try{localStorage.setItem(IDX,JSON.stringify(out));}catch(e3){}}
  return out;
 }
-function stamp(ts){try{var d=new Date(ts);return (d.getMonth()+1)+"/"+d.getDate();}catch(e){return "";}}
+function stamp(ts){try{var d=new Date(ts),m=d.getMinutes();return (d.getMonth()+1)+"/"+d.getDate()+" "+d.getHours()+":"+(m<10?"0":"")+m;}catch(e){return "";}}
 function renderList(nav){
  while(nav.firstChild)nav.removeChild(nav.firstChild);
  var rows=readIdx(),h=document.createElement("p");
