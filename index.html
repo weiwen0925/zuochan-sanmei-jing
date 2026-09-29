@@ -558,39 +558,38 @@ updateProgress();
 })();
 
 // ── iframe 自動高度 ─────────────────────────────────
-function resizeFrame(f){
-  try{
-    var d = f.contentDocument || f.contentWindow.document;
-    if(!d || !d.body) return;
-    d.body.style.minHeight = '0';
-    d.body.style.height    = 'auto';
-    if(d.documentElement){
-      d.documentElement.style.minHeight = '0';
-      d.documentElement.style.height    = 'auto';
-    }
-    var h = d.body.scrollHeight;
-    if(h > 100){
-      f.style.height    = h + 'px';
-      f.style.minHeight = '0';
-    }
-  }catch(e){}
+function resizeFrame(f){ /* wy-rz v2：只在高度真的變了才寫，避免反覆強制重排 */
+ try{
+  var d=f.contentDocument||f.contentWindow.document;
+  if(!d||!d.body)return;
+  if(f.__wyDoc!==d){f.__wyDoc=d; f.__wyH=0; f.__wyN=0; d.body.style.minHeight='0'; d.body.style.height='auto';
+   if(d.documentElement){d.documentElement.style.minHeight='0';d.documentElement.style.height='auto';}}
+  var h=d.body.scrollHeight;
+  /* 內文若含 vh 單位會隨框高回饋、越量越高：同一份內文最多改 30 次（與舊版輪詢次數相同） */
+  if(h>100&&h!==f.__wyH&&(f.__wyN=(f.__wyN||0)+1)<=30){ var rc=f.getBoundingClientRect(), dh=h-rc.height;
+   f.__wyH=h;f.style.height=h+'px';f.style.minHeight='0';
+   /* 視窗上方的品框長高時，同步下移捲動位置，畫面不跳 */
+   if(dh&&(rc.bottom<=0||(f.__wyPh&&rc.top<0)))window.scrollBy(0,dh);
+   f.__wyPh=0; }
+ }catch(e){}
 }
 function resizeAllFrames(){
   document.querySelectorAll('iframe.ch-frame').forEach(resizeFrame);
   if(typeof updateProgress==='function') updateProgress();
 }
-function setupFrame(f){
-  var tries = 0;
-  function tick(){
-    tries++;
-    resizeFrame(f);
-    if(tries < 30) setTimeout(tick, 200);
-  }
-  if(f.contentDocument && f.contentDocument.readyState === 'complete'){
-    tick();
-  } else {
-    f.addEventListener('load', tick);
-  }
+function setupFrame(f){ /* wy-rz v2：ResizeObserver 取代 30×200ms 輪詢 */
+ function go(){
+  resizeFrame(f);
+  try{
+   var d=f.contentDocument;
+   if(window.ResizeObserver&&d&&d.body&&f.__wyROdoc!==d){f.__wyROdoc=d; var q=0;
+    new ResizeObserver(function(){if(q)return;q=requestAnimationFrame(function(){q=0;resizeFrame(f);});}).observe(d.body);}
+   if(d&&d.fonts&&d.fonts.ready)d.fonts.ready.then(function(){resizeFrame(f);});
+  }catch(e){}
+  [500,2000,5000].forEach(function(ms){setTimeout(function(){resizeFrame(f);},ms);});
+ }
+ f.addEventListener('load',go);
+ go();
 }
 document.querySelectorAll('iframe.ch-frame').forEach(setupFrame);
 var rzT;
@@ -620,10 +619,7 @@ document.addEventListener('click', function(e){
 }, true);
 
 // 前 15 秒持續輪詢
-var _rt=0, _riv=setInterval(function(){
-  _rt++; resizeAllFrames();
-  if(_rt > 50) clearInterval(_riv);
-}, 300);
+var _rt=0,_riv=setInterval(function(){_rt++;resizeAllFrames();if(_rt>5)clearInterval(_riv);},2000);
 
 // ── 節層級錨點 cross-iframe relay ────────────────
 // URL hash 格式：
@@ -811,6 +807,82 @@ if(bt){
   }, true);
 })();
 </script>
+<script id="wy-lazy-v2">/* wy-lazy v2：品框不再一次全部解碼（每品各自載入網路字型、反覆重排，開頁要等很久）。
+ 先解第 1 品（或網址錨點／書籤指向的那一品），其餘依序在背景逐品解開（前一品字型就緒、瀏覽器閒下來才下一品）；
+ 捲近、點目次、改網址錨點時立即先解那一品。未解的品框先留佔位高度，解開後長高時自動補正捲動位置。 */
+/* 字型閘：品框內文先用系統字排版，等 Noto 各字重（含所需字集）全部載妥後一次切換——
+   否則每到一片字型就整頁重排一次（一品約 80 片，每次約 0.2 秒）。內容與版式不變，只是切換時機不同。 */
+window.__wyFontGate=function(h){ if(typeof h!=='string'||h.indexOf('wy-fg-js')>=0||h.indexOf('fonts.googleapis.com')<0) return h;
+ var G='<style id="wy-fg-css">html.wy-fg *{font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Microsoft JhengHei","Noto Sans CJK TC",sans-serif!important}</style>'
+  +'<script id="wy-fg-js">(function(){var h=document.documentElement;h.classList.add("wy-fg");var done=false;function off(){if(done)return;done=true;h.classList.remove("wy-fg");}'
+  +'function ld(){var ps=[],txt="";try{txt=(document.body&&document.body.textContent||"").slice(0,60000);}catch(e){}'
+  +'[["Noto Serif TC",[400,600,700,900]],["Noto Sans TC",[300,400,500,700]]].forEach(function(w){w[1].forEach(function(wt){try{ps.push(document.fonts.load(wt+\' 1em "\'+w[0]+\'"\',txt));}catch(e){}});});'
+  +'Promise.all(ps).then(off,off);}'
+  +'var n=0;function go(){if(!document.fonts||!document.fonts.load){off();return;}var has=false;try{document.fonts.forEach(function(f){if(/Noto/.test(f.family))has=true;});}catch(e){}'
+  +'if(has||n++>40)ld();else setTimeout(go,100);}'
+  +'setTimeout(off,9000);if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",go);else go();})();<\/script>';
+ var m=/<head[^>]*>/i.exec(h); return m?(h.slice(0,m.index+m[0].length)+G+h.slice(m.index+m[0].length)):(G+h); };
+window.__wyLazyInit=function(attr,mount){
+ var frames=[].slice.call(document.querySelectorAll('iframe.ch-frame['+attr+']'));
+ if(frames.length<2){ frames.forEach(function(f){ try{mount(f);}catch(e){} }); return; }
+ try{ document.documentElement.style.overflowAnchor='none'; }catch(e){}
+ frames.forEach(function(f){ f.__wyPh=1; if(!f.style.height) f.style.height='3200px'; });
+ var pauseUntil=0;
+ function mk(k){ var f=frames[k]; if(!f||f.__wyDone) return; f.__wyDone=1;
+  var p=f.parentNode, prev=f.previousElementSibling; try{ f.removeAttribute('loading'); }catch(e){}
+  try{ mount(f); }catch(e){}
+  var nf=prev?prev.nextElementSibling:(p&&p.firstElementChild);
+  if(nf&&nf!==f&&nf.tagName==='IFRAME'){ nf.__wyDone=1; nf.__wyPh=1; frames[k]=nf; } }
+ function idxOf(h){ h=(h||'').replace(/^#/,''); if(!h) return -1;
+  var el=null; try{ el=document.getElementById(h); }catch(e){}
+  if(el){ var f=(el.tagName==='IFRAME')?el:(el.querySelector&&el.querySelector('iframe.ch-frame'));
+   if(f){ var k=frames.indexOf(f); if(k>=0) return k; }
+   var s=el; while(s&&s!==document.body){ var g=s.querySelector&&s.querySelector('iframe.ch-frame'); if(g){ var k2=frames.indexOf(g); if(k2>=0) return k2; break; } s=s.parentElement; } }
+  var m=/^[A-Za-z]+-(\d+)/.exec(h); if(m){ var n=parseInt(m[1],10); if(n>=1&&n<=frames.length) return n-1; }
+  return -1; }
+ /* 深連結落點：目標多在品框內（外層找不到該 id），品框解開、字型切換、上方品框長高都會讓落點移動；
+    解開後 8 秒內每 0.15 秒校正一次（讀者一動手就停），與 WY-GOTO 目標一致、不互搶 */
+ var userMoved=false; ['wheel','touchstart','keydown','mousedown'].forEach(function(ev){ window.addEventListener(ev,function(){ userMoved=true; },{passive:true,capture:true}); });
+ function findY(id){ var el=null; try{ el=document.getElementById(id); }catch(e){}
+  if(el&&el.tagName!=='IFRAME') return window.scrollY+el.getBoundingClientRect().top-64;
+  for(var i=0;i<frames.length;i++){ try{ var d=frames[i].contentDocument, e=d&&d.getElementById(id);
+   if(e){ var sy=0; try{ sy=frames[i].contentWindow.pageYOffset||0; }catch(x){} return window.scrollY+frames[i].getBoundingClientRect().top+e.getBoundingClientRect().top+sy-64; } }catch(e2){} }
+  return null; }
+ var stT=0;
+ function settle(id){ var until=Date.now()+8000; userMoved=false; clearTimeout(stT);
+  (function tick(){ if(userMoved||Date.now()>until) return; var y=findY(id); if(y!==null){ y=Math.max(0,y); if(Math.abs(y-window.scrollY)>3) window.scrollTo(0,y); }
+   stT=setTimeout(tick,150); })(); }
+ function goHash(h){ var k=idxOf(h); if(k<0) return false; pauseUntil=Date.now()+3000; mk(k);
+  var id=(h||'').replace(/^#/,''); var outer=null; try{ outer=document.getElementById(id); }catch(e){}
+  if(id&&!outer) settle(id); return true; }
+ window.__wyDecodeAll=function(){ for(var k=0;k<frames.length;k++) mk(k); };
+ window.__wyDecodeHash=goHash;
+ var hq=-1,ht=0; /* 續讀書籤（wy-mark）會依序 hydrate(1..n)：只解最後那一品 */
+ window.__zlLazy={hydrate:function(q){ q=parseInt(q,10)||0; if(q>hq)hq=q; clearTimeout(ht);
+  ht=setTimeout(function(){ if(hq>=1&&hq<=frames.length){ pauseUntil=Date.now()+2500; mk(hq-1); } hq=-1; },0); }};
+ if(!goHash(location.hash)) mk(0);
+ window.addEventListener('hashchange',function(){ goHash(location.hash); });
+ window.addEventListener('click',function(e){ var a=e.target; while(a&&a.tagName!=='A') a=a.parentElement;
+  if(!a) return; var href=a.getAttribute('href')||''; if(href.charAt(0)!=='#') return; goHash(href); },true);
+ if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){ es.forEach(function(x){ var f=x.target; clearTimeout(f.__wyT); if(!x.isIntersecting) return;
+   /* 停留 0.4 秒仍在附近才解：快速捲過的品不解 */
+   f.__wyT=setTimeout(function(){ var r=f.getBoundingClientRect(), H=window.innerHeight;
+    if(r.bottom>-300&&r.top<H+1500){ var k=frames.indexOf(f); io.unobserve(f); if(k>=0) mk(k); } },400); }); },
+   {root:null,rootMargin:'300px 0px 1500px 0px'});
+  frames.forEach(function(f){ if(!f.__wyDone) io.observe(f); }); }
+ var q=0;
+ function next(){
+  if(Date.now()<pauseUntil){ setTimeout(next,pauseUntil-Date.now()+50); return; }
+  while(q<frames.length&&frames[q].__wyDone) q++;
+  if(q>=frames.length) return;
+  mk(q); var f=frames[q], fired=false;
+  function after(){ if(fired) return; fired=true; var d=null; try{ d=f.contentDocument; }catch(e){}
+   var p=(d&&d.fonts&&d.fonts.ready)?d.fonts.ready:Promise.resolve();
+   p.then(function(){ setTimeout(function(){ if(window.requestIdleCallback) requestIdleCallback(next,{timeout:1000}); else next(); },150); }); }
+  try{ f.addEventListener('load',after,{once:true}); }catch(e){} setTimeout(after,5000); }
+ setTimeout(next,1200);
+};</script>
 <script id="wy-decoder">
 (function(){
   if(!window.__wyReady) return;
@@ -832,7 +904,7 @@ if(bt){
   }
   window.__wyReady.then(function(ok){
     if(!ok) return;
-    document.querySelectorAll("iframe.ch-frame[data-c]").forEach(function(oldF){
+    /* wy-lazy v2 */ window.__wyLazyInit("data-c",function(oldF){
       var decoded = _dec(oldF.getAttribute("data-c"));
       if(!decoded) return;
       var newF = document.createElement("iframe");
@@ -841,7 +913,7 @@ if(bt){
         if(a.name === "data-c" || a.name === "srcdoc") continue;
         try{ newF.setAttribute(a.name, a.value); }catch(e){}
       }
-      newF.setAttribute("srcdoc", decoded);
+      newF.setAttribute("srcdoc",window.__wyFontGate(decoded));
       try{ oldF.parentNode.replaceChild(newF, oldF); }catch(e){ return; }
       if(typeof window.setupFrame === "function"){
         try{ window.setupFrame(newF); }catch(e){}
