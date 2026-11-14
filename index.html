@@ -2505,11 +2505,34 @@ out.push('<a class="wys-row" target="_blank" rel="noopener" href="https://weiwen
 +'<span class="wys-tag wys-tag6">刀藏</span><span class="wys-t">'+esc(tt)+' － '+esc(dd.replace(/｜/g," · ").slice(0,34))+'</span></a>');}
 if(!out.length)return "";
 return '<div class="wys-head">刀藏 <span class="wys-hint">四門十八刀 × 二十七品環讀 · 點列直達</span></div>'+out.join("");}
+/*wy-vd-layer*/var VDX=null,VDL=0,VDQ='';
+var VDN={zl:'中論',tg:'十二門論',vv:'迴諍論',dz:'大智度論',sl:'首楞嚴三昧經',bz:'般舟三昧經',zc:'坐禪三昧經'};
+function vdLoad(){if(VDX||VDL)return;VDL=1;try{fetch('https://weiwen0925.github.io/dazhidulun-0/search-video.json').then(function(r){return r.ok?r.json():[];}).then(function(j){VDX=(j&&j.length)?j:[];if(VDX.length){render();}}).catch(function(){VDX=[];});}catch(e){VDX=[];}}
+function vdWhen(s){var d=new Date(s+288e5),m=d.getUTCMinutes(),y=d.getUTCFullYear();return (y!==new Date(Date.now()+288e5).getUTCFullYear()?y+'/':'')+(d.getUTCMonth()+1)+'/'+d.getUTCDate()+'（'+'日一二三四五六'.charAt(d.getUTCDay())+'）'+d.getUTCHours()+':'+(m<10?'0':'')+m;}
+function vdLayer(q,ts){
+if(!VDX){vdLoad();return '';}
+if(!VDX.length||!ts.length)return '';
+if(VDQ!==q){VDQ=q;EXP.v=0;}
+var nums=[],ws=[];for(var a=0;a<ts.length;a++){var m=String(ts[a]).match(/^卷?([0-9]{1,3})$/);if(m)nums.push(parseInt(m[1],10));else ws.push(ts[a]);}
+if(nums.length>2)return '';
+var hit=[];
+for(var i=0;i<VDX.length;i++){var it=VDX[i];
+if(ws.length&&!matchAll((VDN[it.k]||'')+' '+(it.x||''),ws))continue;
+if(nums.length){if(it.k==='dz'){if(it.j!==nums[0]||(nums.length>1&&it.p!==nums[1]))continue;}else if(nums.length>1||it.p!==nums[0])continue;}
+hit.push(it);}
+if(!hit.length)return '';
+var S=Math.min(hit.length,EXP.v?XCAP:6),now=Date.now();
+var h='<div class="wys-head">導讀影片 · '+hit.length+' 支 <span class="wys-hint">已首播直接開影片 · 未首播到門頁影片卡</span></div>';
+for(var r=0;r<S;r++){var v=hit[r],pp=String(v.x||'').split('｜'),live=!!v.y&&(!v.s||v.s<=now);
+var st=!v.y?'首播日期即將公布':(live?(v.s?'已首播':'可觀看'):'首播 '+vdWhen(v.s));
+h+='<a class="wys-row" target="_blank" rel="noopener" href="'+(live?('https://youtu.be/'+v.y):('https://weiwen0925.github.io/dazhidulun-0/#'+v.a))+'">'
++'<span class="wys-tag" style="background:linear-gradient(135deg,#f6d3c0,#db8c68)">影片</span><span class="wys-t"><span class="wys-tt">'+hlAll((VDN[v.k]||'')+' '+(pp[0]||''),ws)+'</span><br>'+hlAll((pp[1]||'').slice(0,40),ws)+(v.d?' · '+esc(v.d):'')+' · '+st+'</span></a>';}
+return h+(EXP.v?xnote(hit.length,S):xmore('v',hit.length,S));}
 function render(){
   var q=(sin.value||'').trim();
   if(!q){renderStarter();return;}
   if(EXP.q!==q){EXP.q=q;EXP.p=0;EXP.n=0;EXP.e=0;EXP.z=0;EXP.b=0;EXP.f=0;}
-  var ts=terms(q),h='';h+=wysSmart(q,ts);h+=ykLayer(q,ts);h+=dzLayer(q,ts);
+  var ts=terms(q),h='';h+=wysSmart(q,ts);h+=ykLayer(q,ts);h+=dzLayer(q,ts);h+=vdLayer(q,ts);
   var pure=/^[\d\s]+$/.test(q);
   if(!IDX){sres.innerHTML='<div class="wys-head">索引載入中…</div>';loadIdx();return;}
   var vols=IDX.vols||{};
