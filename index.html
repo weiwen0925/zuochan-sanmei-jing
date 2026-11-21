@@ -2529,23 +2529,26 @@ h+='<a class="wys-row" target="_blank" rel="noopener" href="'+(live?('https://yo
 +'<span class="wys-tag" style="background:linear-gradient(135deg,#f6d3c0,#db8c68)">影片</span><span class="wys-t"><span class="wys-tt">'+hlAll((VDN[v.k]||'')+' '+(pp[0]||''),ws)+'</span><br>'+hlAll((pp[1]||'').slice(0,40),ws)+(v.d?' · '+esc(v.d):'')+' · '+st+'</span></a>';}
 return h+(EXP.v?xnote(hit.length,S):xmore('v',hit.length,S));}
 /*wy-p2*/var P2={scope:'',cat:'',more:0,sw:null};
-var P2S=[['','全部經典'],['zl','中論'],['dz','大智度論'],['tg','十二門論'],['bl','百論'],['vv','迴諍論'],['zc','坐禪'],['bz','般舟'],['sl','首楞嚴'],['yq','瑜伽師地論']];
-var P2A=[['zl','中論','中觀論'],['tg','十二門論','十二門'],['bl','百論'],['vv','迴諍論','迴諍'],['zc','坐禪三昧經','坐禪'],['bz','般舟三昧經','般舟'],['sl','首楞嚴三昧經','首楞嚴','楞嚴'],['dz','大智度論','智度論','智論'],['yq','瑜伽師地論','瑜伽論','瑜伽']];
-var P2C=[['主題直達','s'],['相關詞','s'],['標籤','t','標籤'],['品名','p','品名'],['原典節點','n','原典'],['白話翻譯','b','白話'],['總表內容','z','總表'],['系列導讀','e','導讀'],['疑難注腳','f','注腳'],['導讀影片','v','影片'],['譬喻藏','y','譬喻'],['刀藏','d','刀藏'],['瑜伽師地論','q','瑜伽']];
-var P2YH='https://weiwen0925.github.io/yogacarabhumi-0/',YQX=null,YQL=0,YQE={q:'',x:0};
-function p2YqLoad(){if(YQX||YQL)return;YQL=1;try{fetch('https://weiwen0925.github.io/dazhidulun-0/search-yq.json').then(function(r){return r.ok?r.json():null;}).then(function(j){if(j&&j.vols){ixmap(j.secs);ixmap(j.fn);YQX=j;render();}}).catch(function(){});}catch(e){}}
+var P2S=[['','全部經典'],['zl','中論'],['dz','大智度論'],['tg','十二門論'],['bl','百論'],['vv','迴諍論'],['zc','坐禪'],['bz','般舟'],['sl','首楞嚴'],['yq','瑜伽師地論'],['sa','雜阿含經']];
+var P2A=[['zl','中論','中觀論'],['tg','十二門論','十二門'],['bl','百論'],['vv','迴諍論','迴諍'],['zc','坐禪三昧經','坐禪'],['bz','般舟三昧經','般舟'],['sl','首楞嚴三昧經','首楞嚴','楞嚴'],['dz','大智度論','智度論','智論'],['yq','瑜伽師地論','瑜伽論','瑜伽'],['sa','雜阿含經','雜阿含']];
+var P2C=[['主題直達','s'],['相關詞','s'],['標籤','t','標籤'],['品名','p','品名'],['原典節點','n','原典'],['白話翻譯','b','白話'],['總表內容','z','總表'],['系列導讀','e','導讀'],['疑難注腳','f','注腳'],['導讀影片','v','影片'],['譬喻藏','y','譬喻'],['刀藏','d','刀藏'],['瑜伽師地論','q','瑜伽'],['雜阿含經','a','雜阿含']];
+var P2YH='https://weiwen0925.github.io/yogacarabhumi-0/',P2SH='https://weiwen0925.github.io/samyuktagama-0/',YQX=null,YQL=0,YQE={q:'',x:{}};
+var P2X=[['yq','search-yq.json','瑜伽師地論','原典 · 白話 · 論義提要 · 直達該節','#dfe7f3,#8fa6c8'],['sa','search-sa.json','雜阿含經','經文 · 白話 · 經義提要 · 直達該經','#e4efe8,#8fb8a6']];
+function p2YqAdd(j){if(!j||!j.vols)return;ixmap(j.secs);ixmap(j.fn);var o=YQX||{vols:{},nodes:{},secs:[],fn:[],vd:[]},k;for(k in j.vols)o.vols[k]=j.vols[k];for(k in (j.nodes||{}))o.nodes[k]=j.nodes[k];o.secs=o.secs.concat(j.secs||[]);o.fn=o.fn.concat(j.fn||[]);o.vd=o.vd.concat(j.vd||[]);YQX=o;}
+function p2YqLoad(){if(YQX||YQL)return;YQL=1;try{var n=P2X.length,got=[],done=0;P2X.forEach(function(c,i){fetch('https://weiwen0925.github.io/dazhidulun-0/'+c[1]).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;}).then(function(j){got[i]=j;done++;if(done<n)return;for(var m=0;m<n;m++)try{p2YqAdd(got[m]);}catch(e1){}if(YQX){render();}});});}catch(e){}}
 function p2YqVd(){if(YQX&&YQX.vd&&VDX&&VDX.length&&!VDX.yq){var a=VDX.concat(YQX.vd);a.yq=1;VDX=a;}}
-function p2YqLayer(q){if(!YQX)return '';if(P2.scope&&P2.scope!=='yq')return '';
-var ts=terms(q),a=YQX.secs||[],hit=[],i;if(!ts.length||/^[0-9 ]+$/.test(q))return '';
-if(YQE.q!==q){YQE.q=q;YQE.x=0;}
-for(i=0;i<a.length;i++)if(matchAll(a[i].t+' '+a[i].x,ts))hit.push(a[i]);
-if(!hit.length)return '';
-var S=Math.min(hit.length,YQE.x?300:8),h='<div class="wys-head">瑜伽師地論 · '+hit.length+' 筆 <span class="wys-hint">原典 · 白話 · 論義提要 · 直達該節</span></div>';
-for(i=0;i<S;i++){var it=hit[i];h+='<a class="wys-row" target="_blank" rel="noopener" href="'+baseOf(it.k)+'#'+esc(it.a)+'"><span class="wys-tag" style="background:linear-gradient(135deg,#dfe7f3,#8fa6c8)">'+esc(label(it.k))+'</span><span class="wys-t"><span class="wys-tt">'+hlAll(String(it.c||'')+'　'+it.t,ts)+'</span><br>'+hlAll(snippet(it.x,ts),ts)+'</span></a>';}
-if(hit.length>S)h+='<button type="button" class="p2-chip p2-fold" data-p2yq="1">顯示全部 '+hit.length+' 筆</button>';
-return h;}
+function p2YqLayer(q){if(!YQX)return '';var ts=terms(q),a=YQX.secs||[],out='',c,ci,i;if(!ts.length||/^[0-9 ]+$/.test(q))return '';
+if(YQE.q!==q){YQE.q=q;YQE.x={};}
+for(ci=0;ci<P2X.length;ci++){c=P2X[ci];if(P2.scope&&P2.scope!==c[0])continue;var re=new RegExp('^'+c[0]+'[0-9]+$'),hit=[];
+for(i=0;i<a.length;i++)if(re.test(String(a[i].k))&&matchAll(a[i].t+' '+a[i].x,ts))hit.push(a[i]);
+if(!hit.length)continue;
+var S=Math.min(hit.length,YQE.x[c[0]]?300:8),h='<div class="wys-head">'+c[2]+' · '+hit.length+' 筆 <span class="wys-hint">'+c[3]+'</span></div>';
+for(i=0;i<S;i++){var it=hit[i];h+='<a class="wys-row" target="_blank" rel="noopener" href="'+baseOf(it.k)+'#'+esc(it.a)+'"><span class="wys-tag" style="background:linear-gradient(135deg,'+c[4]+')">'+esc(label(it.k))+'</span><span class="wys-t"><span class="wys-tt">'+hlAll(String(it.c||'')+'　'+it.t,ts)+'</span><br>'+hlAll(snippet(it.x,ts),ts)+'</span></a>';}
+if(hit.length>S)h+='<button type="button" class="p2-chip p2-fold" data-p2yq="'+c[0]+'">顯示全部 '+hit.length+' 筆</button>';
+out+=h;}
+return out;}
 function p2Name(k){for(var i=0;i<P2A.length;i++)if(P2A[i][0]===k)return P2A[i][1];return '';}
-function p2In(k){k=String(k);return !P2.scope||(P2.scope==='dz'?/^[0-9]+$/.test(k):(P2.scope==='yq'?/^yq[0-9]+$/.test(k):k===P2.scope));}
+function p2In(k){k=String(k);return !P2.scope||(P2.scope==='dz'?/^[0-9]+$/.test(k):((P2.scope==='yq'||P2.scope==='sa')?new RegExp('^'+P2.scope+'[0-9]+$').test(k):k===P2.scope));}
 function p2Obj(o){if(!o||!P2.scope)return o;var r={},ks=Object.keys(o);for(var i=0;i<ks.length;i++)if(p2In(ks[i]))r[ks[i]]=o[ks[i]];return r;}
 function p2Arr(a){if(!a||!P2.scope)return a;var r=[];for(var i=0;i<a.length;i++)if(p2In(a[i].k))r.push(a[i]);return r;}
 function p2Vd(a){if(!a||!P2.scope)return a;var r=[];for(var i=0;i<a.length;i++)if(a[i].k===P2.scope)r.push(a[i]);return r;}
@@ -2574,26 +2577,27 @@ var toks=s.match(/[0-9]+|[零〇一二三四五六七八九十百]+/g)||[],left=
 if(left)return null;
 if(!k){if(!toks.length)return null;if(P2.scope&&P2.scope!=='dz'){if(!/^[ 　第]*[0-9]/.test(s))return null;k=P2.scope;}else{if(!/^[ 　]*(卷|[0-9])/.test(s))return null;k='dz';}}
 var ns=[];for(i=0;i<toks.length;i++){var n=p2Num(toks[i]);if(n<1||n>300)return null;ns.push(n);}
-if(k==='dz'||k==='yq'){if(ns.length>2)return null;return {k:k,j:ns[0]||0,p:ns[1]||0};}
+if(k==='dz'||k==='yq'||k==='sa'){if(ns.length>2)return null;return {k:k,j:ns[0]||0,p:ns[1]||0};}
 if(ns.length>1)return null;return {k:k,j:0,p:ns[0]||0};}
 function p2Card(q){var o=p2Parse(q);if(!o)return '';
-var nm=p2Name(o.k),vols=p2Vols()||{},mv=(o.k==='dz'||o.k==='yq'),key=o.k==='dz'?String(o.j):(o.k==='yq'?'yq'+o.j:o.k),h='',i;
+var nm=p2Name(o.k),vols=p2Vols()||{},mv=(o.k==='dz'||o.k==='yq'||o.k==='sa'),key=o.k==='dz'?String(o.j):((o.k==='yq'||o.k==='sa')?o.k+o.j:o.k),u=o.k==='sa'?'組':'品',h='',i;
 function btn(href,txt,cls){return '<a class="p2-btn'+(cls?' '+cls:'')+'" target="_blank" rel="noopener" href="'+href+'">'+txt+'</a>';}
 if(o.k==='dz'&&!o.j)return '<div class="p2-card"><div class="p2-ck">直達</div><div class="p2-ct">'+nm+'</div><div class="p2-cb">'+btn('https://weiwen0925.github.io/dazhidulun-0/#catalogRoot','百卷卷品目錄','p2-pri')+'</div><div class="p2-ch">打「卷45」到卷四十五，打「45 3」到卷四十五第三品。</div></div>';
 if(o.k==='yq'&&!o.j)return '<div class="p2-card"><div class="p2-ck">直達</div><div class="p2-ct">'+nm+'</div><div class="p2-cb">'+btn(P2YH+'#juan','百卷總目','p2-pri')+btn(P2YH+'#videos','導讀影片')+'</div><div class="p2-ch">打「瑜伽師地論 2」到卷二，打「瑜伽師地論 1 2」到卷一第二品。</div></div>';
+if(o.k==='sa'&&!o.j)return '<div class="p2-card"><div class="p2-ck">直達</div><div class="p2-ct">'+nm+'</div><div class="p2-cb">'+btn(P2SH+'#song','七誦與卷目','p2-pri')+'</div><div class="p2-ch">打「雜阿含 1」到卷一，打「雜阿含 1 3」到卷一第三組。卷次依相應次第。</div></div>';
 if(!mv&&!o.p)return '<div class="p2-card"><div class="p2-ck">直達</div><div class="p2-ct">'+nm+'</div><div class="p2-cb">'+btn(baseOf(o.k),'讀本','p2-pri')+'</div><div class="p2-ch">在經名後面加品次就直達那一品，例如「'+nm+' 3」。</div></div>';
 var v=vols[key];if(!v||!v.pins)return '';
-if(mv&&!o.p){h=btn(baseOf(key),'讀本 · 卷'+o.j,'p2-pri');for(i=0;i<v.pins.length&&i<40;i++)h+='<a class="p2-btn p2-sm" target="_blank" rel="noopener" title="'+esc(String(v.pins[i].t||'').slice(0,60))+'" href="'+baseOf(key)+'#'+esc(v.a)+'-'+v.pins[i].p+'">品'+v.pins[i].p+'</a>';
+if(mv&&!o.p){h=btn(baseOf(key),'讀本 · 卷'+o.j,'p2-pri');for(i=0;i<v.pins.length&&i<40;i++)h+='<a class="p2-btn p2-sm" target="_blank" rel="noopener" title="'+esc(String(v.pins[i].t||'').slice(0,60))+'" href="'+baseOf(key)+'#'+esc(v.a)+'-'+v.pins[i].p+'">'+u+v.pins[i].p+'</a>';
 return '<div class="p2-card"><div class="p2-ck">直達</div><div class="p2-ct">'+nm+'　卷'+o.j+'</div><div class="p2-cb">'+h+'</div></div>';}
 var pin=null;for(i=0;i<v.pins.length;i++)if(v.pins[i].p===o.p){pin=v.pins[i];break;}
 if(!pin)return '';
 h=btn(baseOf(key)+'#'+esc(v.a)+'-'+o.p,'讀本','p2-pri');
 var bh=p2Bh()||[];for(i=0;i<bh.length;i++)if(String(bh[i].k)===key&&bh[i].p===o.p){h+=btn(baseOf(key)+'#bh-'+o.p,'原文↔白話');break;}
 var vd=VDX||[],now=Date.now();for(i=0;i<vd.length;i++){var it=vd[i];if(mv?(it.k===o.k&&it.j===o.j&&it.p===o.p):(it.k===o.k&&it.p===o.p)){var lv=!!it.y&&(!it.s||it.s<=now),pm=String(it.x||'').match(/（[上下一二三四五六]）/),part=pm?pm[0]:'';
-h+=btn(lv?('https://youtu.be/'+it.y):((it.k==='yq'?P2YH:'https://weiwen0925.github.io/dazhidulun-0/')+'#'+it.a),'導讀影片'+part+(lv?'':(it.y&&it.s?' · 首播 '+vdWhen(it.s):' · 即將首播')));}}
+h+=btn(lv?('https://youtu.be/'+it.y):((it.k==='yq'?P2YH:(it.k==='sa'?P2SH:'https://weiwen0925.github.io/dazhidulun-0/'))+'#'+it.a),'導讀影片'+part+(lv?'':(it.y&&it.s?' · 首播 '+vdWhen(it.s):' · 即將首播')));}}
 var fn=p2Fn()||[],fc=0,f1='';for(i=0;i<fn.length;i++)if(String(fn[i].k)===key){var fa=String(fn[i].a||'');if(fa.indexOf('chapter-'+o.p+'-')===0||fa==='chapter-'+o.p||fa.indexOf('ch-'+o.p+'-')===0){fc++;if(!f1)f1=fa;}}
 if(fc)h+=btn(baseOf(key)+'#'+esc(f1),'疑難注腳 '+fc+' 則');
-return '<div class="p2-card"><div class="p2-ck">直達</div><div class="p2-ct">'+nm+'　'+(mv?'卷'+o.j+'・':'')+'品'+o.p+'　'+esc(String(pin.t||'').slice(0,34))+'</div><div class="p2-cb">'+h+'</div></div>';}
+return '<div class="p2-card"><div class="p2-ck">直達</div><div class="p2-ct">'+nm+'　'+(mv?'卷'+o.j+'・':'')+u+o.p+'　'+esc(String(pin.t||'').slice(0,34))+'</div><div class="p2-cb">'+h+'</div></div>';}
 function p2Split(h){var H='<div class="wys-head">',a=h.split(H),out=[{pre:a[0]}];for(var i=1;i<a.length;i++){var e=a[i].indexOf('</div>'),head=e<0?a[i]:a[i].slice(0,e),t=head.replace(/<[^>]*>/g,''),c='m',lab='';
 for(var j=0;j<P2C.length;j++)if(t.indexOf(P2C[j][0])===0){c=P2C[j][1];lab=P2C[j][2]||'';break;}
 var m=t.match(/· ([0-9]+) (筆|篇|支)/);out.push({c:c,lab:lab,n:m?m[1]:'',t:t,html:H+a[i]});}return out;}
@@ -2621,7 +2625,7 @@ else rest+=x;}
 return sec[0].pre+hub+news+rest;}
 function now0(){return Date.now();}
 document.addEventListener('click',function(e){var t=e.target&&e.target.closest?e.target.closest('[data-p2scope],[data-p2cat],[data-p2more],[data-p2yq]'):null;if(!t)return;e.preventDefault();e.stopPropagation();
-if(t.hasAttribute('data-p2scope'))P2.scope=t.getAttribute('data-p2scope')||'';else if(t.hasAttribute('data-p2yq'))YQE.x=1;else if(t.hasAttribute('data-p2cat'))P2.cat=t.getAttribute('data-p2cat')||'';else P2.more=P2.more?0:1;
+if(t.hasAttribute('data-p2scope'))P2.scope=t.getAttribute('data-p2scope')||'';else if(t.hasAttribute('data-p2yq'))YQE.x[t.getAttribute('data-p2yq')==='1'?'yq':t.getAttribute('data-p2yq')]=1;else if(t.hasAttribute('data-p2cat'))P2.cat=t.getAttribute('data-p2cat')||'';else P2.more=P2.more?0:1;
 p2Bar();render();},true);
 function p2Vols(){return (IDX&&IDX.vols)||{};}
 function p2Bh(){return (IDX&&IDX.bhv)||[];}
@@ -2631,8 +2635,8 @@ if(IDX){var o={},k;for(k in IDX)o[k]=IDX[k];o.vols=p2Obj(IDX.vols);o.nodes=p2Obj
 if(ZI)ZI=p2Arr(ZI);if(YKX&&P2.scope!=='dz'&&P2.scope!=='zl')YKX=[];if(DZX&&P2.scope!=='zl')DZX=[];if(VDX)VDX=p2Vd(VDX);}
 else if(P2.sw){var s=P2.sw;P2.sw=null;IDX=s[0];ZI=s[1];YKX=s[2];DZX=s[3];VDX=s[4];}}
 function p2YqMerge(){p2YqLoad();p2YqVd();if(!YQX||!IDX||!IDX.vols||IDX.yq)return;var k;IDX.nodes=IDX.nodes||{};for(k in YQX.vols){IDX.vols[k]=YQX.vols[k];IDX.nodes[k]=(YQX.nodes||{})[k]||[];}IDX.fnv=(IDX.fnv||[]).concat(YQX.fn||[]);IDX.yq=1;}
-function baseOf(k){var m=/^yq([0-9]+)$/.exec(String(k));return m?('https://weiwen0925.github.io/yogacarabhumi-'+m[1]+'/'):baseOf0(k);}
-function label(k){var m=/^yq([0-9]+)$/.exec(String(k));return m?('瑜伽 卷'+m[1]):label0(k);}
+function baseOf(k){var m=/^(yq|sa)([0-9]+)$/.exec(String(k));return m?('https://weiwen0925.github.io/'+(m[1]==='sa'?'samyuktagama-':'yogacarabhumi-')+m[2]+'/'):baseOf0(k);}
+function label(k){var m=/^(yq|sa)([0-9]+)$/.exec(String(k));return m?((m[1]==='sa'?'雜阿含 卷':'瑜伽 卷')+m[2]):label0(k);}
 function renderStarter(){p2YqLoad();renderStarter0();try{sres.innerHTML=p2Start(sres.innerHTML);}catch(e){}}
 function render(){var q=String(sin.value||'').replace(/^[ 　]+|[ 　]+$/g,'');if(!q){render0();return;}
 p2YqMerge();p2Swap(1);try{render0();}finally{p2Swap(0);}
